@@ -7,8 +7,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/FernandoH-G/Project-Page-Server/graph/generated"
-	"github.com/FernandoH-G/Project-Page-Server/graph/model"
+	"github.com/FernandoH-G/Project-Site/graph/generated"
+	"github.com/FernandoH-G/Project-Site/graph/model"
 )
 
 func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) (*model.Todo, error) {

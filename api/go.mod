@@ -1,4 +1,4 @@
-module github.com/FernandoH-G/Project-Page-Server
+module github.com/FernandoH-G/Project-Site
 
 go 1.13
 
