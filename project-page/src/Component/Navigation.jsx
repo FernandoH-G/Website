@@ -6,7 +6,7 @@ import ic_my_pig from "./../Images/ic_my_pig_55x55.png"
 function Navigation() {
   return (
     <div className="App">
-      <Navbar bg="light" expand="lg" >
+      <Navbar bg="dark" expand="lg" >
         <Link className="navbar-brand" to="/">
           <Navbar.Brand >
             <img
@@ -19,7 +19,7 @@ function Navigation() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto" >
-            <NavLink className="nav-link" to="/about">
+            <NavLink  style={{color: "white"}} className="nav-link" to="/about">
               About
             </NavLink>
           </Nav>

@@ -1,21 +1,58 @@
 import './App.css';
 
 import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
+import { setContext } from '@apollo/client/link/context';
+import {
+  ApolloClient,
+  ApolloProvider,
+  createHttpLink,
+  InMemoryCache,
+} from '@apollo/client';
 
 import Navigation from './Component/Navigation';
 import About from "./Endpoint/About"
 import Home from "./Endpoint/Home"
+import {myConfig} from "./config.js"
+
+const httpLink = createHttpLink({
+  uri: 'https://api.github.com/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
+  // const token = localStorage.getItem('token');
+  const token = myConfig.GH_API_TOKEN;
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : "",
+    }
+  }
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache()
+});
+
+// Since pinnedItems' node is a union of Gist and Repository, I had to
+// explicitly define what to do with each type.
+
+
 
 function App() {
   return (
-    <React.Fragment>
-      <Navigation />
-      <Switch>
-        <Route path="/about" component={About} />
-        <Route path="/" exact component={Home} />
-      </Switch>
-    </React.Fragment>
+    <ApolloProvider client={client}>
+      <React.Fragment>
+        <Navigation />
+        <Switch>
+          <Route path="/about" component={About} />
+          <Route path="/" exact component={Home} />
+        </Switch>
+      </React.Fragment>
+    </ApolloProvider>
   )
 }
 
