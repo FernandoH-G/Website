@@ -3,10 +3,11 @@ import { Container } from "reactstrap"
 import Cards from "../Component/Cards"
 import { useQuery, gql } from '@apollo/client'
 
-import ic_gw2Items from "./../Images/ic_gw2_items_512x512.png"
 import { CardDeck } from "react-bootstrap"
 
 // Returns name and description from Repository.
+// Since pinnedItems' node is a union of Gist and Repository, I had to
+// explicitly define what to do with each type.
 const GET_PINNED_REPOS = gql`
       query GetPinned {
         user(login: "FernandoH-G") {
@@ -19,6 +20,8 @@ const GET_PINNED_REPOS = gql`
                 ... on Repository {
                   name
                   description
+                  url
+                  openGraphImageUrl
                 }
               }
             }
@@ -29,7 +32,7 @@ const GET_PINNED_REPOS = gql`
 
 function Home() {
     const title = "Projects"
-    const message = "Pinned projects fetched from Github."
+    const message = "Displayed projects fetched from Github using their GQL API."
 
     const { loading, error, data } = useQuery(GET_PINNED_REPOS);
 
@@ -57,25 +60,10 @@ function Home() {
         <Container>
             <Jumbo title={title} message={message} />
             <CardDeck>
-                <Cards edges={pinEdges} cardImg={ic_gw2Items} />
+                <Cards edges={pinEdges}/>
             </CardDeck>
         </Container>
     );
 }
 
 export default Home;
-
-    // console.log(data.user.pinnedItems.edges[0].node.description)
-    // console.log( "EG Length: ", EG.length)
-    // console.log( "EG[0]: ", EG[0].node.description)
-
-    // EG.forEach(pin=> {
-    //     console.log(pin.node.name)
-    //     console.log(pin.node.description)
-    // });
-
-    // pinEdges.map(pin => (
-    //     console.log(pin.node.name)
-    // ))
-
-    // if (pinEdges.length > 2) add a CardDeck. 2 rows!
