@@ -2,13 +2,13 @@ import './App.css';
 
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import { setContext } from '@apollo/client/link/context';
 import {
 	ApolloClient,
 	ApolloProvider,
 	createHttpLink,
 	InMemoryCache,
 } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 
 import Navigation from './Component/Navigation';
 import About from "./Endpoint/About"

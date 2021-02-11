@@ -23,7 +23,7 @@ function chooseIMG(name) {
 	}
 }
 
-function Cards(props) {
+function RepoCards(props) {
 	return props.edges.map(pin => (
 		<Card
 			key={pin.node.name}
@@ -48,4 +48,4 @@ function Cards(props) {
 	));
 }
 
-export default Cards
+export default RepoCards
