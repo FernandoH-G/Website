@@ -1,4 +1,4 @@
-import { Card } from "react-bootstrap"
+import { Card, Button } from "react-bootstrap"
 
 import ic_gw2items from "./../Images/ic_gw2_items_512x512.png"
 import ic_gw2itemsServer from "./../Images/ic_gw2_items_server_512x512.png"
@@ -25,13 +25,24 @@ function chooseIMG(name) {
 
 function Cards(props) {
 	return props.edges.map(pin => (
-		<Card key={pin.node.name}>
+		<Card
+			key={pin.node.name}
+			className="text-center"
+			border="light">
 			<Card.Body>
+				<Card.Header as="h5"> {pin.node.name}</Card.Header>
 				<Card.Link href={pin.node.url}>
 					<Card.Img variant="top" src={chooseIMG(pin.node.name)} />
 				</Card.Link>
-				<Card.Title> {pin.node.name}</Card.Title>
 				<Card.Text> {pin.node.description}</Card.Text>
+				<Button size="sm" variant="outline-secondary">
+					Last Update:{' '}
+					{new Intl.DateTimeFormat("en-GB", {
+						year: "numeric",
+						month: "long",
+						day: "2-digit"
+					}).format(new Date(pin.node.pushedAt))}
+				</Button>
 			</Card.Body>
 		</Card>
 	));

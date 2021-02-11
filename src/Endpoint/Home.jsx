@@ -22,6 +22,7 @@ const GET_PINNED_REPOS = gql`
                   description
                   url
                   openGraphImageUrl
+				  pushedAt
                 }
               }
             }
@@ -30,11 +31,38 @@ const GET_PINNED_REPOS = gql`
       }
 `;
 
+// Query to list the last 5 commit messages for my account.
+// const GET_COMMIT_MESSAGES = gql `
+// query GetCommitMessages {
+// 	user(login: "FernandoH-G") {
+// 		comm
+// 	}
+// }
+// `;
+
+// const TEST = gql `
+// query {
+//   user(login: "FernandoH-G") {
+//  		repositoriesContributedTo {
+//       edges {
+//         node {
+//           isEmpty
+//         }
+//       }
+//     }
+//   }
+// }
+// `;
+
+// Query to list the last 5 commit messages for the given repository.
+
 function Home() {
 	const title = "Projects"
 	const message = "Pinned projects fetched from Github using their GQL API."
 
 	const { loading, error, data } = useQuery(GET_PINNED_REPOS);
+	// const { loading2, error2, data2 } = useQuery(TEST);
+	// console.log(data2)
 
 	// Create proper loading component.
 	if (loading) return (
