@@ -92,7 +92,9 @@ function Home() {
 			<CardDeck>
 				<RepoCards edges={pinEdges} onClick={handleClick} />
 			</CardDeck>
+			<CardDeck>
 				<CommitCards rName={value} />
+			</CardDeck>
 		</Container>
 	);
 }

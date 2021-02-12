@@ -25,7 +25,6 @@ query GetRepoCommits($repoName: String!) {
 
 const CommitCards = (props) => {
 	const repoName = props.rName
-	// console.log("CommitTable repoName: ", repoName)
 	const { loading, error, data } = useQuery(GET_REPO_COMMITS, {
 		variables: { repoName },
 	});
@@ -37,29 +36,16 @@ const CommitCards = (props) => {
 	);
 
 	const commits = data.repository.defaultBranchRef.target.history.edges
-	const innerCommits = commits.map(com =>(
-		com.node
+	return commits.map(com => (
+		<Card 
+		key={com.node.url}
+		border="info">
+			<Card.Body>
+				<Card.Header as="h4"> {com.node.pushDate} </Card.Header>
+				<Card.Text> {com.node.message}</Card.Text>
+			</Card.Body>
+		</Card>
 	))
-	console.log("commits: ", innerCommits.map( a => (
-		a.message
-	)))
-	// console.log("CommitTable message: ", data.repository.defaultBranchRef.target.history.edges[0].node.message)
-
-	return(
-		<p>{innerCommits.map( a => (
-			a.message.length
-		))}</p>
-	)
-	// return innerCommits.map(com => {
-	// 	<Card 
-	// 	key={com.url}
-	// 	border="info">
-	// 		<Card.Body>
-	// 			<Card.Header as="h4"> {com.pushDate} </Card.Header>
-	// 			<Card.Text> {com.message}</Card.Text>
-	// 		</Card.Body>
-	// 	</Card>
-	// })
 }
 
 export default CommitCards

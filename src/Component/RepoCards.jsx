@@ -39,7 +39,10 @@ function RepoCards(props) {
 					<Card.Img variant="top" src={chooseIMG(pin.node.name)} />
 				</Card.Link>
 				<Card.Text> {pin.node.description}</Card.Text>
-				<Button size="sm" variant="outline-secondary" onClick={() => handleClick(pin.node.name)} >
+				<Button
+					size="sm"
+					variant="outline-secondary"
+					onClick={() => handleClick(pin.node.name)} >
 					Last Update:{' '}
 					{new Intl.DateTimeFormat("en-GB", {
 						year: "numeric",
