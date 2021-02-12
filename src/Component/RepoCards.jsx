@@ -24,6 +24,10 @@ function chooseIMG(name) {
 }
 
 function RepoCards(props) {
+	function handleClick(name) {
+		// console.log("RepoCards handleClick name: ",name)
+		props.onClick(name)
+	}
 	return props.edges.map(pin => (
 		<Card
 			key={pin.node.name}
@@ -35,7 +39,7 @@ function RepoCards(props) {
 					<Card.Img variant="top" src={chooseIMG(pin.node.name)} />
 				</Card.Link>
 				<Card.Text> {pin.node.description}</Card.Text>
-				<Button size="sm" variant="outline-secondary">
+				<Button size="sm" variant="outline-secondary" onClick={() => handleClick(pin.node.name)} >
 					Last Update:{' '}
 					{new Intl.DateTimeFormat("en-GB", {
 						year: "numeric",
