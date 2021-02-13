@@ -6,6 +6,8 @@ import ic_snipsnap from "./../Images/ic_snipsnap_512x512.png"
 import ic_snipsnapServer from "./../Images/ic_snipsnap_server_512x512.png"
 import ic_website from "./../Images/ic_my_pig_512x512.png"
 
+import { parseDate } from "./../Util/helpers"
+
 function chooseIMG(name) {
 	switch (name) {
 		case "GW2-Items":
@@ -25,7 +27,6 @@ function chooseIMG(name) {
 
 function RepoCards(props) {
 	function handleClick(name) {
-		// console.log("RepoCards handleClick name: ",name)
 		props.onClick(name)
 	}
 	return props.edges.map(pin => (
@@ -39,18 +40,16 @@ function RepoCards(props) {
 					<Card.Img variant="top" src={chooseIMG(pin.node.name)} />
 				</Card.Link>
 				<Card.Text> {pin.node.description}</Card.Text>
-				<Button
-					size="sm"
-					variant="outline-secondary"
-					onClick={() => handleClick(pin.node.name)} >
-					Last Update:{' '}
-					{new Intl.DateTimeFormat("en-GB", {
-						year: "numeric",
-						month: "long",
-						day: "2-digit"
-					}).format(new Date(pin.node.pushedAt))}
-				</Button>
 			</Card.Body>
+			<Button
+				size="sm"
+				variant="outline-secondary"
+				onClick={() => handleClick(pin.node.name)} >
+				Last Update:{' '}
+				{parseDate(pin.node.pushedAt)}
+			</Button>
+			{/* Button Group/Radio ?  */}
+			{/* CommitCards ?*/}
 		</Card>
 	));
 }

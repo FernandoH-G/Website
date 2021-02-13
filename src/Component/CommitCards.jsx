@@ -1,5 +1,8 @@
-import { Card } from "react-bootstrap"
+import { Card} from "react-bootstrap"
 import { useQuery, gql } from '@apollo/client'
+
+import Loading from "./../Component/Loading"
+import { parseText, parseDate } from "./../Util/helpers"
 
 const GET_REPO_COMMITS = gql`
 query GetRepoCommits($repoName: String!) {
@@ -23,26 +26,36 @@ query GetRepoCommits($repoName: String!) {
 }
 `;
 
+
 const CommitCards = (props) => {
 	const repoName = props.rName
 	const { loading, error, data } = useQuery(GET_REPO_COMMITS, {
 		variables: { repoName },
 	});
 	if (loading) return (
-		<p>Loading...</p>
+		<Loading message="Loading commits..." color="secondary" />
 	);
 	if (error) return (
-		<p>Error.</p>
+		<Loading message="Error" color="danger" />
 	);
 
 	const commits = data.repository.defaultBranchRef.target.history.edges
 	return commits.map(com => (
-		<Card 
-		key={com.node.url}
-		border="info">
+		<Card
+			key={com.node.url}
+			bg={"dark"}
+			style={{ color: "white" }}
+			border="info">
 			<Card.Body>
-				<Card.Header as="h4"> {com.node.pushDate} </Card.Header>
-				<Card.Text> {com.node.message}</Card.Text>
+				<Card.Link href={com.node.url}>
+					<Card.Header >
+						Commit Date:{'\n'}
+						{parseDate(com.node.pushedDate)}
+					</Card.Header>
+				</Card.Link>
+				<Card.Text>
+					{parseText(com.node.message)}
+				</Card.Text>
 			</Card.Body>
 		</Card>
 	))
