@@ -58,17 +58,9 @@ function Home() {
     const title = "Projects"
     const message = "Pinned projects fetched from Github using their GQL API."
 
-    //Temp
-
     const { loading, error, data } = useQuery(GET_PINNED_REPOS);
-    const [value, setRepo] = useState("Website")
+    const [repo, setRepo] = useState("Website")
 
-
-    const handleClick = (repoName) => {
-        setRepo(repoName)
-    }
-
-    // Create proper loading component using Alerts.
     if (loading) return (
         <Container>
             <Jumbo title={title} message={message} />
@@ -90,11 +82,11 @@ function Home() {
         <Container >
             <Jumbo title={title} message={message} />
             <CardDeck>
-                <RepoCards edges={pinEdges} onClick={handleClick} />
+                <RepoCards edges={pinEdges} setRepo={setRepo} />
             </CardDeck>
             <br />
             <CardDeck>
-                <CommitCards rName={value} />
+                <CommitCards repoName={repo} />
             </CardDeck>
         </Container>
     );

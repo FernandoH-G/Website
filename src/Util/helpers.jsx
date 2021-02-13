@@ -1,7 +1,7 @@
 export function parseText(message) {
     // Handle the title of the commit to be seperate from body. Detect \n?
-    if (message.length > 150) {
-        return `${message.substr(0, 150)}...`
+    if (message.length > 100) {
+        return `${message.substr(0, 100)}...`
     } else {
         return `${message}`
 

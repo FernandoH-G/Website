@@ -28,15 +28,15 @@ query GetRepoCommits($repoName: String!) {
 
 
 const CommitCards = (props) => {
-	const repoName = props.rName
+	const repoName = props.repoName
 	const { loading, error, data } = useQuery(GET_REPO_COMMITS, {
 		variables: { repoName },
 	});
 	if (loading) return (
-		<Loading message="Loading commits..." color="secondary" />
+		<Loading message={`Fetching ${repoName} commits...`} color="secondary" />
 	);
 	if (error) return (
-		<Loading message="Error" color="danger" />
+		<Loading message={`Error fetching ${repoName} commits.`} color="danger" />
 	);
 
 	const commits = data.repository.defaultBranchRef.target.history.edges
