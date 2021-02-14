@@ -1,4 +1,5 @@
-import { Card, Button } from "react-bootstrap"
+import { useState } from "react"
+import { Card, ButtonGroup, ToggleButton } from "react-bootstrap"
 
 import ic_gw2items from "./../Images/ic_gw2_items_512x512.png"
 import ic_gw2itemsServer from "./../Images/ic_gw2_items_server_512x512.png"
@@ -26,6 +27,8 @@ function chooseIMG(name) {
 }
 
 function RepoCards(props) {
+	const [radioValue, setRadioValue] = useState("");
+
 	return props.edges.map(pin => (
 		<Card
 			key={pin.node.name}
@@ -38,15 +41,20 @@ function RepoCards(props) {
 				</Card.Link>
 				<Card.Text> {pin.node.description}</Card.Text>
 			</Card.Body>
-			<Button
-				size="sm"
-				variant="outline-secondary"
-				onClick={() => props.setRepo(pin.node.name)} >
-				Last Update:{' '}
-				{parseDate(pin.node.pushedAt)}
-			</Button>
-			{/* Button Group/Radio ?  */}
-			{/* CommitCards ?*/}
+			<ButtonGroup toggle>
+				<ToggleButton
+					key={pin.node.name}
+					type="radio"
+					variant="outline-secondary"
+					name="Button Radio"
+					value={pin.node.name}
+					checked={radioValue === pin.node.name}
+					onChange={(e)=> setRadioValue(e.currentTarget.value)}
+					onClick={() => props.setRepo(pin.node.name)}>
+					Last Update:{' '}
+					{parseDate(pin.node.pushedAt)}
+				</ToggleButton>
+			</ButtonGroup>
 		</Card>
 	));
 }
