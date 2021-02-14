@@ -60,6 +60,7 @@ function Home() {
 
     const { loading, error, data } = useQuery(GET_PINNED_REPOS);
     const [repo, setRepo] = useState("Website")
+    const [clicked, setClicked] = useState(false)
 
     if (loading) return (
         <Container>
@@ -82,11 +83,13 @@ function Home() {
         <Container >
             <Jumbo title={title} message={message} />
             <CardDeck>
-                <RepoCards edges={pinEdges} setRepo={setRepo} />
+                <RepoCards edges={pinEdges} setRepo={setRepo} setClicked={setClicked} />
             </CardDeck>
             <br />
             <CardDeck>
+              { clicked && 
                 <CommitCards repoName={repo} />
+              }
             </CardDeck>
         </Container>
     );
