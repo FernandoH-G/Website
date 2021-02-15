@@ -31,21 +31,6 @@ query GetPinned {
             url
             openGraphImageUrl
             pushedAt
-            defaultBranchRef {
-              target {
-                ... on Commit {
-                 history(first: 5) {
-                  edges {
-                    node {
-                      pushedDate
-                      message
-                      url
-                    }
-                  }
-                }
-                }
-              }
-            }
           }
         }
       }
@@ -55,44 +40,44 @@ query GetPinned {
 `;
 
 function Home() {
-    const title = "Projects"
-    const message = "Pinned projects fetched from Github using their GQL API."
+	const title = "Projects"
+	const message = "Pinned projects fetched from Github using their GQL API."
 
-    const { loading, error, data } = useQuery(GET_PINNED_REPOS);
-    const [repo, setRepo] = useState("Website")
-    const [clicked, setClicked] = useState(false)
+	const { loading, error, data } = useQuery(GET_PINNED_REPOS);
+	const [repo, setRepo] = useState("Website")
+	const [clicked, setClicked] = useState(false)
 
-    if (loading) return (
-        <Container>
-            <Jumbo title={title} message={message} />
-            <CardDeck>
-                <Loading message="Fetching pinned repositories..." color="secondary" />
-            </CardDeck>
-        </Container>
-    );
-    if (error) return (
-        <Container>
-            <Jumbo title={title} message={message} />
-            <CardDeck>
-                <Loading message="Error fetching pinned repositories." color="danger" />
-            </CardDeck>
-        </Container>
-    );
-    const pinEdges = data.user.pinnedItems.edges
-    return (
-        <Container >
-            <Jumbo title={title} message={message} />
-            <CardDeck>
-                <RepoCards edges={pinEdges} setRepo={setRepo} setClicked={setClicked} />
-            </CardDeck>
-            <br />
-            <CardDeck>
-              { clicked && 
-                <CommitCards repoName={repo} />
-              }
-            </CardDeck>
-        </Container>
-    );
+	if (loading) return (
+		<Container>
+			<Jumbo title={title} message={message} />
+			<CardDeck>
+				<Loading message="Fetching pinned repositories..." color="secondary" />
+			</CardDeck>
+		</Container>
+	);
+	if (error) return (
+		<Container>
+			<Jumbo title={title} message={message} />
+			<CardDeck>
+				<Loading message="Error fetching pinned repositories." color="danger" />
+			</CardDeck>
+		</Container>
+	);
+	const pinEdges = data.user.pinnedItems.edges
+	return (
+		<Container >
+			<Jumbo title={title} message={message} />
+			<CardDeck>
+				<RepoCards edges={pinEdges} setRepo={setRepo} setClicked={setClicked} />
+			</CardDeck>
+			<br />
+			<CardDeck>
+				{clicked &&
+					<CommitCards repoName={repo} />
+				}
+			</CardDeck>
+		</Container>
+	);
 }
 
 export default Home;

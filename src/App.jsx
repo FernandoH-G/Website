@@ -13,14 +13,13 @@ import { setContext } from '@apollo/client/link/context';
 import Navigation from './Component/Navigation';
 import About from "./Endpoint/About"
 import Home from "./Endpoint/Home"
-import { myConfig } from "./config.js"
 
 const httpLink = createHttpLink({
 	uri: 'https://api.github.com/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
-	const token = myConfig.GH_API_TOKEN;
+	const token = process.env.REACT_APP_GH_API_KEY;
 	// Return the headers to the context so httpLink can read them.
 	return {
 		headers: {
