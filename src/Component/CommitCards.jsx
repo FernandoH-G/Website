@@ -1,31 +1,9 @@
-import { Card} from "react-bootstrap"
-import { useQuery, gql } from '@apollo/client'
+import { Card } from "react-bootstrap"
+import { useQuery } from '@apollo/client'
 
 import Loading from "./../Component/Loading"
 import { parseText, parseDate } from "./../Util/helpers"
-
-const GET_REPO_COMMITS = gql`
-query GetRepoCommits($repoName: String!) {
-  repository(name: $repoName, owner: "FernandoH-G") {
-    defaultBranchRef {
-      target {
-        ... on Commit {
-          history(first: 5) {
-            edges {
-              node {
-                pushedDate
-                message
-                url
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-`;
-
+import { GET_REPO_COMMITS } from "../Util/query"
 
 const CommitCards = (props) => {
 	const repoName = props.repoName

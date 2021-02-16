@@ -1,43 +1,18 @@
 import { useState } from "react"
+import { Container } from "reactstrap"
+import CardDeck from "react-bootstrap/CardDeck"
+import { useQuery } from '@apollo/client'
+
 import Jumbo from "../Component/Jumbo"
 import RepoCards from "../Component/RepoCards"
 import CommitCards from "../Component/CommitCards"
 import Loading from "../Component/Loading"
-import CardDeck from "react-bootstrap/CardDeck"
+import { GET_PINNED_REPOS } from "../Util/query"
 
-import { Container } from "reactstrap"
-import { useQuery, gql } from '@apollo/client'
 
 // Returns name and description from Repository.
 // Since pinnedItems' node is a union of Gist and Repository, I had to
 // explicitly define what to do with each type.
-const GET_PINNED_REPOS = gql`
-query GetPinned {
-  rateLimit {
-    cost
-    remaining
-    resetAt
-  }
-  user(login: "FernandoH-G") {
-    pinnedItems(first: 5) {
-      edges {
-        node {
-          ... on Gist {
-            name
-          }
-          ... on Repository {
-            name
-            description
-            url
-            openGraphImageUrl
-            pushedAt
-          }
-        }
-      }
-    }
-  }
-}
-`;
 
 function Home() {
 	const title = "Projects"
