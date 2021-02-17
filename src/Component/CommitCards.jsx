@@ -6,15 +6,16 @@ import { parseText, parseDate } from "./../Util/helpers"
 import { GET_REPO_COMMITS } from "../Util/query"
 
 const CommitCards = (props) => {
-	const repoName = props.repoName
+	const name = props.repoInfo.name
+	const owner= props.repoInfo.owner
 	const { loading, error, data } = useQuery(GET_REPO_COMMITS, {
-		variables: { repoName },
+		variables: { name, owner},
 	});
 	if (loading) return (
-		<Loading message={`Fetching ${repoName} commits...`} color="secondary" />
+		<Loading message={`Fetching ${name} commits...`} color="secondary" />
 	);
 	if (error) return (
-		<Loading message={`Error fetching ${repoName} commits.`} color="danger" />
+		<Loading message={`Error fetching ${name} commits.`} color="danger" />
 	);
 
 	const commits = data.repository.defaultBranchRef.target.history.edges

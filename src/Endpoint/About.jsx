@@ -2,7 +2,6 @@ import { Container } from "reactstrap"
 import { Col, Row, Image } from "react-bootstrap"
 
 import Jumbo from "../Component/Jumbo"
-import myPig from "./../Images/ic_my_pig_512x512.png"
 import me from "./../Images/me.jpg"
 import {meet_me}from "./../Text/about.json"
 

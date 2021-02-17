@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Container } from "reactstrap"
 import CardDeck from "react-bootstrap/CardDeck"
 import { useQuery } from '@apollo/client'
@@ -19,14 +19,25 @@ function Home() {
 	const message = "Pinned projects fetched from Github using their GQL API."
 
 	const { loading, error, data } = useQuery(GET_PINNED_REPOS);
-	const [repo, setRepo] = useState("Website")
 	const [clicked, setClicked] = useState(false)
+	const [repoInfo, setRepoInfo] = useState(
+		{ name: "Website", owner: "FernandoH-G" })
+
+	useEffect(() => {
+		console.log("useEffect() called.")
+		// Use this to make a new query?
+		return (
+			<p>After repo is changed!</p>
+		)
+	}, [])
 
 	if (loading) return (
 		<Container>
 			<Jumbo title={title} message={message} />
 			<CardDeck>
-				<Loading message="Fetching pinned repositories..." color="secondary" />
+				<Loading
+					message="Fetching pinned repositories..."
+					color="secondary" />
 			</CardDeck>
 		</Container>
 	);
@@ -34,7 +45,9 @@ function Home() {
 		<Container>
 			<Jumbo title={title} message={message} />
 			<CardDeck>
-				<Loading message="Error fetching pinned repositories." color="danger" />
+				<Loading
+					message="Error fetching pinned repositories."
+					color="danger" />
 			</CardDeck>
 		</Container>
 	);
@@ -43,12 +56,16 @@ function Home() {
 		<Container >
 			<Jumbo title={title} message={message} />
 			<CardDeck>
-				<RepoCards edges={pinEdges} setRepo={setRepo} setClicked={setClicked} />
+				<RepoCards
+					edges={pinEdges}
+					setRepoInfo={setRepoInfo}
+					setClicked={setClicked}
+				/>
 			</CardDeck>
 			<br />
 			<CardDeck>
 				{clicked &&
-					<CommitCards repoName={repo} />
+					<CommitCards repoInfo={repoInfo} />
 				}
 			</CardDeck>
 		</Container>

@@ -51,7 +51,11 @@ function RepoCards(props) {
 					checked={radioValue === pin.node.name}
 					onChange={(e) => setRadioValue(e.currentTarget.value)}
 					onClick={() => {
-						props.setRepo(pin.node.name);
+						props.setRepoInfo(
+							{
+								name: pin.node.name,
+								owner: pin.node.owner.login
+							})
 						// console.log(radioValue, pin.node.name);
 						// console.log("clicked: ",props.clicked)
 						if (radioValue === pin.node.name) {

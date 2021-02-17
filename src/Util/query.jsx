@@ -1,12 +1,7 @@
 import { gql } from '@apollo/client'
 
 export const GET_PINNED_REPOS = gql`
-query GetPinned {
-  rateLimit {
-    cost
-    remaining
-    resetAt
-  }
+query GetPinnedRepos {
   user(login: "FernandoH-G") {
     pinnedItems(first: 5) {
       edges {
@@ -15,6 +10,9 @@ query GetPinned {
             name
           }
           ... on Repository {
+			owner {
+				login
+			}
             name
             description
             url
@@ -25,12 +23,17 @@ query GetPinned {
       }
     }
   }
+  rateLimit {
+    cost
+    remaining
+    resetAt
+  }
 }
 `;
 
 export const GET_REPO_COMMITS = gql`
-query GetRepoCommits($repoName: String!) {
-  repository(name: $repoName, owner: "FernandoH-G") {
+query GetRepoCommits($name: String!, $owner: String!) {
+  repository(name: $name, owner: $owner) {
     defaultBranchRef {
       target {
         ... on Commit {
