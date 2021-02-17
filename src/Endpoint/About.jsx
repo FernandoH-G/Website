@@ -1,5 +1,4 @@
-import { Container } from "reactstrap"
-import { Col, Row, Image } from "react-bootstrap"
+import { Col, Row, Image, Container } from "react-bootstrap"
 
 import Jumbo from "../Component/Jumbo"
 import me from "./../Images/me.jpg"

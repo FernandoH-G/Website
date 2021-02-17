@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { Card, ButtonGroup, ToggleButton } from "react-bootstrap"
+import CommitCards from "../Component/CommitCards"
+import CardDeck from "react-bootstrap/CardDeck"
 
 import ic_gw2items from "./../Images/ic_gw2_items_512x512.png"
 import ic_gw2itemsServer from "./../Images/ic_gw2_items_server_512x512.png"
@@ -28,6 +30,9 @@ function chooseIMG(name) {
 
 function RepoCards(props) {
 	const [radioValue, setRadioValue] = useState("");
+	const [clicked, setClicked] = useState(false)
+	const [repoInfo, setRepoInfo] = useState(
+		{ name: "Website", owner: "FernandoH-G" })
 
 	return props.edges.map(pin => (
 		<Card
@@ -51,22 +56,23 @@ function RepoCards(props) {
 					checked={radioValue === pin.node.name}
 					onChange={(e) => setRadioValue(e.currentTarget.value)}
 					onClick={() => {
-						props.setRepoInfo(
-							{
-								name: pin.node.name,
-								owner: pin.node.owner.login
-							})
+						setRepoInfo(
+							{ name: pin.node.name, 
+								owner: pin.node.owner.login })
 						// console.log(radioValue, pin.node.name);
 						// console.log("clicked: ",props.clicked)
 						if (radioValue === pin.node.name) {
-							props.setClicked(false)
+							setClicked(false)
 						}
-						else props.setClicked(true)
+						else setClicked(true)
 					}}>
 					Last Update:{' '}
 					{parseDate(pin.node.pushedAt)}
 				</ToggleButton>
 			</ButtonGroup>
+				{clicked &&
+					<CommitCards repoInfo={repoInfo} />
+				}
 		</Card>
 	));
 }

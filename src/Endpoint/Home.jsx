@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Container } from "reactstrap"
+import { Container } from "react-bootstrap"
 import CardDeck from "react-bootstrap/CardDeck"
 import { useQuery } from '@apollo/client'
 
@@ -19,9 +19,6 @@ function Home() {
 	const message = "Pinned projects fetched from Github using their GQL API."
 
 	const { loading, error, data } = useQuery(GET_PINNED_REPOS);
-	const [clicked, setClicked] = useState(false)
-	const [repoInfo, setRepoInfo] = useState(
-		{ name: "Website", owner: "FernandoH-G" })
 
 	useEffect(() => {
 		console.log("useEffect() called.")
@@ -53,21 +50,19 @@ function Home() {
 	);
 	const pinEdges = data.user.pinnedItems.edges
 	return (
-		<Container >
+		<Container>
 			<Jumbo title={title} message={message} />
 			<CardDeck>
 				<RepoCards
 					edges={pinEdges}
-					setRepoInfo={setRepoInfo}
-					setClicked={setClicked}
 				/>
 			</CardDeck>
 			<br />
-			<CardDeck>
+			{/* <CardDeck>
 				{clicked &&
 					<CommitCards repoInfo={repoInfo} />
 				}
-			</CardDeck>
+			</CardDeck> */}
 		</Container>
 	);
 }
