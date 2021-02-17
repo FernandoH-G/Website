@@ -20,13 +20,13 @@ function Home() {
 
 	const { loading, error, data } = useQuery(GET_PINNED_REPOS);
 
-	useEffect(() => {
-		console.log("useEffect() called.")
-		// Use this to make a new query?
-		return (
-			<p>After repo is changed!</p>
-		)
-	}, [])
+	// useEffect(() => {
+	// 	console.log("useEffect() called.")
+	// 	// Use this to make a new query?
+	// 	return (
+	// 		<p>After repo is changed!</p>
+	// 	)
+	// }, [])
 
 	if (loading) return (
 		<Container>
@@ -50,6 +50,7 @@ function Home() {
 	);
 	const pinEdges = data.user.pinnedItems.edges
 	return (
+		console.log("home rendered"),
 		<Container>
 			<Jumbo title={title} message={message} />
 			<CardDeck>
@@ -57,12 +58,6 @@ function Home() {
 					edges={pinEdges}
 				/>
 			</CardDeck>
-			<br />
-			{/* <CardDeck>
-				{clicked &&
-					<CommitCards repoInfo={repoInfo} />
-				}
-			</CardDeck> */}
 		</Container>
 	);
 }
