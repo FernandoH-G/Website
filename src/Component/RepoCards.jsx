@@ -54,7 +54,8 @@ function RepoCards(props) {
 								})
 							// props.setClicked( !clicked)
 							if (radioValue === pin.node.name) {
-								props.setClicked(prevVal => !prevVal)
+								// props.setClicked(prevVal => !prevVal)
+								props.setClicked(false)
 							} else {props.setClicked(true)}
 						}}>
 						Last Update:{' '}

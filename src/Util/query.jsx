@@ -40,7 +40,7 @@ query GetRepoCommits($name: String!, $owner: String!) {
           history(first: 5) {
             edges {
               node {
-                pushedDate
+                committedDate
                 message
                 url
               }

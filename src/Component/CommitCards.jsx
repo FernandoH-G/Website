@@ -28,7 +28,7 @@ const CommitCards = (props) => {
 			<Card.Body>
 				<Card.Link href={com.node.url}>
 					Commit Date:{'\n'}
-					{parseDate(com.node.pushedDate)}
+					{parseDate(com.node.committedDate)}
 				</Card.Link>
 				<Card.Text>
 					{parseText(com.node.message)}

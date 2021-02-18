@@ -20,6 +20,7 @@ function Home() {
 			<CardDeck>
 				<RepoCards setClicked={setClicked} setRepoInfo={setRepoInfo} />
 			</CardDeck>
+			<br/>
 			<CardDeck>
 				{clicked && <CommitCards repoInfo={repoInfo} />}
 			</CardDeck>
