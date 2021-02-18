@@ -7,9 +7,9 @@ import { GET_REPO_COMMITS } from "../Util/query"
 
 const CommitCards = (props) => {
 	const name = props.repoInfo.name
-	const owner= props.repoInfo.owner
+	const owner = props.repoInfo.owner
 	const { loading, error, data } = useQuery(GET_REPO_COMMITS, {
-		variables: { name, owner},
+		variables: { name, owner },
 	});
 	if (loading) return (
 		<Loading message={`Fetching ${name} commits...`} color="secondary" />
@@ -27,10 +27,8 @@ const CommitCards = (props) => {
 			border="info">
 			<Card.Body>
 				<Card.Link href={com.node.url}>
-					<Card.Header >
-						Commit Date:{'\n'}
-						{parseDate(com.node.pushedDate)}
-					</Card.Header>
+					Commit Date:{'\n'}
+					{parseDate(com.node.pushedDate)}
 				</Card.Link>
 				<Card.Text>
 					{parseText(com.node.message)}

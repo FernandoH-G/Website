@@ -13,6 +13,7 @@ import { setContext } from '@apollo/client/link/context';
 import Navigation from './Component/Navigation';
 import About from "./Endpoint/About"
 import Home from "./Endpoint/Home"
+import Test from "./Endpoint/Test"
 
 const httpLink = createHttpLink({
 	uri: 'https://api.github.com/graphql',
@@ -43,6 +44,7 @@ function App() {
 				<Switch>
 					<Route path="/about" component={About} />
 					<Route path="/" exact component={Home} />
+					<Route path="/test" exact component={Test} />
 				</Switch>
 			</React.Fragment>
 		</ApolloProvider>

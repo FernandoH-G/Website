@@ -1,5 +1,7 @@
 import React from "react";
 import { Jumbotron } from "reactstrap";
+
+import me from "./../Images/me.jpg"
 function Jumbo(props) {
 	return (
 		<Jumbotron style={{ backgroundColor: "#282c34", color: "white" }}>
