@@ -24,7 +24,6 @@ function RepoCards(props) {
 
 	return (
 		pinEdges.map((pin, idx) => (
-			console.log(`repo card: ${idx} rendered`),
 			<Card
 				key={pin.node.name}
 				className="text-center"
@@ -46,13 +45,13 @@ function RepoCards(props) {
 						checked={radioValue === pin.node.name}
 						onChange={(e) => setRadioValue(e.currentTarget.value)}
 						onClick={() => {
-							console.log(`${idx} clicked!`)
+							console.log(`${idx} card clicked. click value: ${props.clicked}`)
 							props.setRepoInfo(
 								{
 									name: pin.node.name,
 									owner: pin.node.owner.login
 								})
-							// props.setClicked( !clicked)
+							// props.setClicked(!props.clicked)
 							if (radioValue === pin.node.name) {
 								// props.setClicked(prevVal => !prevVal)
 								props.setClicked(false)

@@ -8,13 +8,11 @@ import RepoCards from "../Component/RepoCards"
 
 function Home() {
 	const title = "Projects"
-	const message = "Pinned projects fetched from Github using their GQL API."
-	// const [clicked, setClicked] = useState(() => false)
+	const message = "Projects fetched from Github using their GQL API."
 	const [clicked, setClicked] = useState(() => false)
 	const [repoInfo, setRepoInfo] = useState({ name: "Website", owner: "FernandoH-G" })
 
 	return (
-		console.log("home rendered"),
 		<Container>
 			<Jumbo title={title} message={message} />
 			<CardDeck>
