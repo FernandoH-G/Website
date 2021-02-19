@@ -18,7 +18,6 @@ It will also hold information about myself and the things I am interested in.
 + Add more page sections.
 + Integrate subscriptions on my projects page.
 + Seperate presentation layer from networking.
-+ Dockerize website.
 
 # Screenshots
 
