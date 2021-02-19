@@ -26,9 +26,9 @@ const CommitCards = (props) => {
 			<Card.Header style={{
 				backgroundColor: "#343a40",
 				color: "#d7cebb"
-			}}>Commit Date:<br/>{parseDate(com.node.committedDate)}
+			}}>Commit Date:<br />{parseDate(com.node.committedDate)}
 				<Card.Link href={com.node.url}>
-					<Image src={link} fluid/>
+					<Image src={link} fluid />
 				</Card.Link>
 			</Card.Header>
 			<Card.Body style={{

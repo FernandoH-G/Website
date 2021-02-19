@@ -8,7 +8,7 @@ function Jumbo(props) {
 			borderRadius: "0 0 5px 5px"
 		}}><h1 className="display-3">{props.title}</h1>
 			<p className="lead">{props.message}</p>
-			</Jumbotron>
+		</Jumbotron>
 	);
 }
 
