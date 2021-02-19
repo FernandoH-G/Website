@@ -10,9 +10,9 @@ query GetPinnedRepos {
             name
           }
           ... on Repository {
-			owner {
-				login
-			}
+            owner {
+              login
+            }
             name
             description
             url

@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { Card, ButtonGroup, ToggleButton } from "react-bootstrap"
 import { useQuery } from '@apollo/client'
 
 import Loading from "../Component/Loading"
 import { GET_PINNED_REPOS } from "../Util/query"
-import { parseDate, chooseIMG} from "./../Util/helpers"
+import { parseDate, chooseIMG } from "./../Util/helpers"
 
 function RepoCards(props) {
 	const { loading, error, data } = useQuery(GET_PINNED_REPOS);
@@ -26,10 +26,9 @@ function RepoCards(props) {
 		pinEdges.map((pin, idx) => (
 			<Card
 				key={pin.node.name}
-				className="text-center"
-				border="light">
-				<Card.Body>
-					<Card.Header as="h5"> {pin.node.name}</Card.Header>
+				className="text-center">
+				<Card.Title as="h2"> {pin.node.name}</Card.Title>
+				<Card.Body >
 					<Card.Link href={pin.node.url}>
 						<Card.Img variant="top" src={chooseIMG(pin.node.name)} />
 					</Card.Link>
@@ -55,7 +54,7 @@ function RepoCards(props) {
 							if (radioValue === pin.node.name) {
 								// props.setClicked(prevVal => !prevVal)
 								props.setClicked(false)
-							} else {props.setClicked(true)}
+							} else { props.setClicked(true) }
 						}}>
 						Last Update:{' '}
 						{parseDate(pin.node.pushedAt)}

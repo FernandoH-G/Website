@@ -1,9 +1,11 @@
-import { Card } from "react-bootstrap"
+import { Card, Image } from "react-bootstrap"
 import { useQuery } from '@apollo/client'
 
 import Loading from "./../Component/Loading"
 import { parseText, parseDate } from "./../Util/helpers"
 import { GET_REPO_COMMITS } from "../Util/query"
+
+import link from ".././Images/ic_external_link_16x16.png"
 
 const CommitCards = (props) => {
 	const name = props.repoInfo.name
@@ -20,20 +22,19 @@ const CommitCards = (props) => {
 
 	const commits = data.repository.defaultBranchRef.target.history.edges
 	return commits.map(com => (
-		<Card
-			key={com.node.url}
-			bg={"dark"}
-			style={{ color: "white" }}
-			border="info">
-			<Card.Body>
+		<Card key={com.node.url}>
+			<Card.Header style={{
+				backgroundColor: "#343a40",
+				color: "#d7cebb"
+			}}>Commit Date:<br/>{parseDate(com.node.committedDate)}
 				<Card.Link href={com.node.url}>
-					Commit Date:{'\n'}
-					{parseDate(com.node.committedDate)}
+					<Image src={link} fluid/>
 				</Card.Link>
-				<Card.Text>
-					{parseText(com.node.message)}
-				</Card.Text>
-			</Card.Body>
+			</Card.Header>
+			<Card.Body style={{
+				backgroundColor: "#282c34",
+				color: "white"
+			}}>{parseText(com.node.message)}</Card.Body>
 		</Card>
 	))
 }

@@ -1,6 +1,6 @@
+import { useState } from "react"
 import { Container } from "react-bootstrap"
 import CardDeck from "react-bootstrap/CardDeck"
-import { useEffect, useState } from "react"
 
 import CommitCards from "../Component/CommitCards"
 import Jumbo from "../Component/Jumbo"
@@ -18,7 +18,7 @@ function Home() {
 			<CardDeck>
 				<RepoCards setClicked={setClicked} setRepoInfo={setRepoInfo} />
 			</CardDeck>
-			<br/>
+			<br />
 			<CardDeck>
 				{clicked && <CommitCards repoInfo={repoInfo} />}
 			</CardDeck>

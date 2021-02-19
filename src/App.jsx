@@ -1,6 +1,5 @@
 import './App.css';
 
-import React from "react";
 import { Switch, Route } from "react-router-dom";
 import {
 	ApolloClient,
@@ -39,14 +38,14 @@ const client = new ApolloClient({
 function App() {
 	return (
 		<ApolloProvider client={client}>
-			<React.Fragment>
+			<>
 				<Navigation />
 				<Switch>
 					<Route path="/about" component={About} />
 					<Route path="/" exact component={Home} />
 					<Route path="/test" exact component={Test} />
 				</Switch>
-			</React.Fragment>
+			</>
 		</ApolloProvider>
 	)
 }

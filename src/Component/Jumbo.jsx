@@ -1,13 +1,14 @@
-import React from "react";
-import { Jumbotron } from "reactstrap";
+import Jumbotron from "react-bootstrap/Jumbotron";
 
-import me from "./../Images/me.jpg"
 function Jumbo(props) {
 	return (
-		<Jumbotron style={{ backgroundColor: "#282c34", color: "white" }}>
-			<h1 className="display-3">{props.title}</h1>
+		<Jumbotron style={{
+			backgroundColor: "#282c34",
+			color: "white",
+			borderRadius: "0 0 5px 5px"
+		}}><h1 className="display-3">{props.title}</h1>
 			<p className="lead">{props.message}</p>
-		</Jumbotron>
+			</Jumbotron>
 	);
 }
 
