@@ -9,6 +9,7 @@ import RepoCards from "../Component/RepoCards"
 function Home() {
 	const title = "Projects"
 	const message = "Projects fetched from Github using their GQL API."
+	const [clicked, setClicked] = useState(() => false)
 	const [repoInfo, setRepoInfo] = useState(null)
 
 	return (
@@ -16,12 +17,13 @@ function Home() {
 			<Jumbo title={title} message={message} />
 			<CardDeck>
 				<RepoCards
-					repoInfo={repoInfo}
+					clicked={clicked}
+					setClicked={setClicked}
 					setRepoInfo={setRepoInfo} />
 			</CardDeck>
 			<br />
 			<CardDeck>
-				{repoInfo && <CommitCards repoInfo={repoInfo} />}
+				{clicked && <CommitCards repoInfo={repoInfo} />}
 			</CardDeck>
 		</Container>
 	);

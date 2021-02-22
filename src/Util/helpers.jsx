@@ -33,7 +33,7 @@ export function chooseIMG(name) {
 			return ic_snipsnap
 		case "SnipSnap-Barber-Server":
 			return ic_snipsnapServer
-		case "Website":
+		case "FernandoH-G.tech":
 			return ic_website
 		default:
 			return "https://avatars.githubusercontent.com/u/23583398?s=400&v=4"

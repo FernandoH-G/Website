@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { Card, ButtonGroup, Button } from "react-bootstrap"
+import { Card } from "react-bootstrap"
+import { Button, ButtonGroup } from 'reactstrap';
 import { useQuery } from '@apollo/client'
 
 import Loading from "../Component/Loading"
@@ -8,6 +9,7 @@ import { parseDate, chooseIMG } from "./../Util/helpers"
 
 function RepoCards(props) {
 	const { loading, error, data } = useQuery(GET_PINNED_REPOS);
+	const [rSelected, setRSelected] = useState("");
 
 	if (loading) return (
 		<Loading
@@ -33,19 +35,22 @@ function RepoCards(props) {
 					</Card.Link>
 					<Card.Text> {pin.node.description}</Card.Text>
 				</Card.Body>
-				<ButtonGroup toggle>
+				<ButtonGroup>
 					<Button
 						key={pin.node.name}
-						variant="outline-secondary"
+						outline
+						color="secondary"
+						active={rSelected === pin.node.name}
 						onClick={() => {
-							const newRepoInfo =
-								props.repoInfo && props.repoInfo.name === pin.node.name
-									? null
-									: {
-										name: pin.node.name,
-										owner: pin.node.owner.login,
-									};
-							props.setRepoInfo(newRepoInfo);
+							setRSelected(pin.node.name)
+							props.setRepoInfo({
+								name: pin.node.name,
+								owner: pin.node.owner.login
+							})
+							if (rSelected === pin.node.name) {
+								setRSelected("")
+								props.setClicked(prevVal => !prevVal)
+							} else { props.setClicked(true) }
 						}}>
 						Last Update:{' '}
 						{parseDate(pin.node.pushedAt)}
