@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Card, ButtonGroup, ToggleButton } from "react-bootstrap"
+import { Card, ButtonGroup, Button } from "react-bootstrap"
 import { useQuery } from '@apollo/client'
 
 import Loading from "../Component/Loading"
@@ -8,7 +8,6 @@ import { parseDate, chooseIMG } from "./../Util/helpers"
 
 function RepoCards(props) {
 	const { loading, error, data } = useQuery(GET_PINNED_REPOS);
-	const [radioValue, setRadioValue] = useState("");
 
 	if (loading) return (
 		<Loading
@@ -23,7 +22,7 @@ function RepoCards(props) {
 	const pinEdges = data.user.pinnedItems.edges
 
 	return (
-		pinEdges.map((pin, idx) => (
+		pinEdges.map(pin => (
 			<Card
 				key={pin.node.name}
 				className="text-center">
@@ -35,30 +34,22 @@ function RepoCards(props) {
 					<Card.Text> {pin.node.description}</Card.Text>
 				</Card.Body>
 				<ButtonGroup toggle>
-					<ToggleButton
+					<Button
 						key={pin.node.name}
-						type="radio"
 						variant="outline-secondary"
-						name="Button Radio"
-						value={pin.node.name}
-						checked={radioValue === pin.node.name}
-						onChange={(e) => setRadioValue(e.currentTarget.value)}
 						onClick={() => {
-							console.log(`${idx} card clicked. click value: ${props.clicked}`)
-							props.setRepoInfo(
-								{
-									name: pin.node.name,
-									owner: pin.node.owner.login
-								})
-							// props.setClicked(!props.clicked)
-							if (radioValue === pin.node.name) {
-								// props.setClicked(prevVal => !prevVal)
-								props.setClicked(false)
-							} else { props.setClicked(true) }
+							const newRepoInfo =
+								props.repoInfo && props.repoInfo.name === pin.node.name
+									? null
+									: {
+										name: pin.node.name,
+										owner: pin.node.owner.login,
+									};
+							props.setRepoInfo(newRepoInfo);
 						}}>
 						Last Update:{' '}
 						{parseDate(pin.node.pushedAt)}
-					</ToggleButton>
+					</Button>
 				</ButtonGroup>
 			</Card>
 		))
