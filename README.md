@@ -1,4 +1,4 @@
-# FernandoH-G Website
+# FernandoH-G.tech
 
 ## Description
 [FernandoH-G.tech](fernandoh-g.tech)] will display the current projects I am working on/want to show off. 
