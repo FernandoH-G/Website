@@ -17,7 +17,6 @@ It will also hold information about myself and the things I am interested in.
 + Improve visual appeal.
 + Add more page sections.
 + Integrate subscriptions on my projects page.
-+ Seperate presentation layer from networking.
 
 # Screenshots
 
