@@ -1,7 +1,7 @@
 # FernandoH-G Website
 
 ## Description
-This website will display the current projects I am working on/want to show off. 
+[FernandoH-G.tech](fernandoh-g.tech)] will display the current projects I am working on/want to show off. 
 It will also hold information about myself and the things I am interested in.
 
 ## Tech Goals
