@@ -27,7 +27,7 @@ function RepoCards(props) {
 		pinEdges.map(pin => (
 			<Card
 				key={pin.node.name}
-				className="text-center">
+				className="repo-card">
 				<Card.Title as="h2"> {pin.node.name}</Card.Title>
 				<Card.Body >
 					<Card.Link href={pin.node.url}>
