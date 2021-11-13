@@ -9,8 +9,8 @@ function Navigation() {
 			<Navbar
 				bg="dark"
 				style={{
-					borderRadius: "25px 25px 25px 25px",
 					margin: "5px 0 15px 0",
+					borderRadius: "0 35px 0 35px",
 					padding: "45px 35px 45px 35px"
 				}}
 			>

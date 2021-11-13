@@ -6,7 +6,7 @@ function Jumbo(props) {
 			backgroundColor: "#282c34",
 			color: "white",
 			// color: "#d7cebb",
-			borderRadius: "35px",
+			borderRadius: "0 35px 0 35px",
 			padding: "45px 35px 45px 35px"
 		}}
 		>
