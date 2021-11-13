@@ -5,8 +5,15 @@ import ic_my_pig from "./../Images/ic_my_pig_55x55.png"
 
 function Navigation() {
 	return (
-		<Navbar sticky="top" bg="dark" >
-			<Container>
+		<Container >
+			<Navbar
+				bg="dark"
+				style={{
+					borderRadius: "25px 25px 25px 25px",
+					margin: "5px 0 15px 0",
+					padding: "45px 35px 45px 35px"
+				}}
+			>
 				<Link className="navbar-brand" to="/">
 					<Navbar.Brand >
 						<img
@@ -20,12 +27,13 @@ function Navigation() {
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="mr-auto" >
 						<NavLink className="nav-link" to="/about" style={{
-							color: "#d7cebb"
+							// color: "#d7cebb"
+							color: "white"
 						}} >About</NavLink>
 					</Nav>
 				</Navbar.Collapse>
-			</Container>
-		</Navbar>
+			</Navbar>
+		</Container>
 	);
 }
 
