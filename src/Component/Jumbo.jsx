@@ -4,8 +4,8 @@ function Jumbo(props) {
 	return (
 		<Jumbotron style={{
 			backgroundColor: "#282c34",
-			color: "white",
-			// color: "#d7cebb",
+			// color: "white",
+			color: "#d7cebb",
 			borderRadius: "0 35px 0 35px",
 			padding: "45px 35px 45px 35px"
 		}}
