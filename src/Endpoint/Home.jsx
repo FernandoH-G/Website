@@ -5,6 +5,7 @@ import CardDeck from "react-bootstrap/CardDeck"
 import CommitCards from "../Component/CommitCards"
 import Jumbo from "../Component/Jumbo"
 import RepoCards from "../Component/RepoCards"
+import Projects from "../Component/Projects"
 
 function Home() {
 	const title = "Projects"
@@ -15,13 +16,14 @@ function Home() {
 	return (
 		<Container>
 			<Jumbo title={title} message={message} />
-			<CardDeck>
+			<Projects/>
+			{/* <CardDeck>
 				<RepoCards setClicked={setClicked} setRepoInfo={setRepoInfo} />
 			</CardDeck>
 			<br />
 			<CardDeck>
 				{clicked && <CommitCards repoInfo={repoInfo} />}
-			</CardDeck>
+			</CardDeck> */}
 		</Container>
 	);
 }

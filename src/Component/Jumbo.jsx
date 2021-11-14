@@ -3,7 +3,7 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 function Jumbo(props) {
 	return (
 		<Jumbotron style={{
-			backgroundColor: "#282c34",
+			backgroundColor: "#343a40",
 			color: "white",
 			// color: "#d7cebb",
 			borderRadius: "0 35px 0 35px",

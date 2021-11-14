@@ -1,0 +1,42 @@
+.title-text-color {
+    color: white;
+}
+
+.subtitle-text-color {
+    color: rgb(177, 173, 173);
+}
+.projects-grid{
+    display:grid;
+    grid-template-columns:  2fr 1fr;
+    /* grid-template-columns: repeat(auto-fit, minmax(320px, 2fr 1fr));  */
+    /* grid-template-rows:  auto; */
+    grid-template-areas: 
+    "Repo-Flex Commit-Flex";
+}
+
+.repo-flex {
+    display: flex;
+    flex-direction: column;
+}
+.repo-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* grid-template-columns: repeat(auto-fit, minmax(320px, 1fr 2fr));  */
+    /* grid-template-rows: auto; */
+    grid-template-areas: 
+    "Repo-Image Repo-Info";
+    padding: 30px;
+    background-color: #343a40;
+    margin-bottom: 10px;
+    border-radius: 0 35px 0 35px;
+}
+
+.repo-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.commit-flex {
+    display: flex;
+    flex-direction: column;
+}
