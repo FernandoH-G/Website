@@ -27,8 +27,8 @@ function Navigation() {
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="mr-auto" >
 						<NavLink className="nav-link" to="/about" style={{
-							color: "#d7cebb"
-							// color: "white"
+							// color: "#d7cebb"
+							color: "white"
 						}} >About</NavLink>
 					</Nav>
 				</Navbar.Collapse>
