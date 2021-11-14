@@ -11,7 +11,7 @@ function Jumbo(props) {
 		}}
 		>
 			<h1 className="display-3">{props.title}</h1>
-			<p className="lead">{props.message}</p>
+			<p className="lead" style={{color:"rgb(177, 173, 173)"}}>{props.message}</p>
 		</Jumbotron>
 	);
 }
