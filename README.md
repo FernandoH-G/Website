@@ -1,7 +1,7 @@
-# FernandoH-G Website
+# FernandoH-G.tech
 
 ## Description
-This website will display the current projects I am working on/want to show off. 
+[FernandoH-G.tech](https://fernandoh-g.tech) will display the current projects I am working on/want to show off. 
 It will also hold information about myself and the things I am interested in.
 
 ## Tech Goals
@@ -13,9 +13,17 @@ It will also hold information about myself and the things I am interested in.
 + Re-introduce myself to web development.
 + Work on modern web dev libraries.
 
-# Future Plans
+## Future Plans
 + Improve visual appeal.
 + Add more page sections.
 + Integrate subscriptions on my projects page.
-+ Seperate presentation layer from networking.
-+ Dockerize website.
+
+# Screenshots
+
+## Fetching
+<img src="repo-images/fetching_site.png" width="50%"/>
+<br>
+
+## Loaded
+<img src="repo-images/landing_site.PNG" width="50%"/>
+<br>

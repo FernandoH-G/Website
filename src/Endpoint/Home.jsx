@@ -11,19 +11,21 @@ function Home() {
 	const title = "Projects"
 	const message = "Projects fetched from Github using their GQL API."
 	const [clicked, setClicked] = useState(() => false)
-	const [repoInfo, setRepoInfo] = useState({ name: "Website", owner: "FernandoH-G" })
+	const [repoInfo, setRepoInfo] = useState(null)
 
 	return (
 		<Container>
 			<Jumbo title={title} message={message} />
-			<Projects/>
-			{/* <CardDeck>
-				<RepoCards setClicked={setClicked} setRepoInfo={setRepoInfo} />
-			</CardDeck>
-			<br />
+			<div className="flex-area">
+				<RepoCards
+					clicked={clicked}
+					setClicked={setClicked}
+					setRepoInfo={setRepoInfo}
+				/>
+			</div>
 			<CardDeck>
 				{clicked && <CommitCards repoInfo={repoInfo} />}
-			</CardDeck> */}
+			</CardDeck>
 		</Container>
 	);
 }

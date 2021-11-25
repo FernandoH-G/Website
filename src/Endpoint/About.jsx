@@ -1,14 +1,17 @@
-import { Container, Card, CardDeck } from "react-bootstrap"
+import { Container, Card, CardDeck, ListGroup } from "react-bootstrap"
 
 import Jumbo from "../Component/Jumbo"
 import about_me from "./../Text/about.json"
+
+const aLinkStyle = {
+}
 
 function About() {
 	const title = "Fernando Herrera-Gomez"
 	const message = "Software Developer"
 
 	return (
-		<Container>
+		<Container >
 			<Jumbo title={title} message={message} />
 			<h2>Bio</h2>
 			<p >
@@ -36,6 +39,14 @@ function About() {
 					</Card>
 				))}
 			</CardDeck>}
+			<br />
+			<h2>Contact</h2>
+			<ListGroup horizontal>
+				<ListGroup.Item><a style={aLinkStyle} href="https://github.com/FernandoH-G">Github</a> </ListGroup.Item>
+				<ListGroup.Item><a style={aLinkStyle} href="https://www.linkedin.com/in/fernando-herrera-4040/">Linkedin</a> </ListGroup.Item>
+			</ListGroup>
+
+
 		</Container>
 	);
 }

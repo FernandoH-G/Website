@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { Card, ButtonGroup, ToggleButton } from "react-bootstrap"
+import { Card } from "react-bootstrap"
+import { Button, ButtonGroup } from 'reactstrap';
 import { useQuery } from '@apollo/client'
 
 import Loading from "../Component/Loading"
@@ -8,7 +9,7 @@ import { parseDate, chooseIMG } from "./../Util/helpers"
 
 function RepoCards(props) {
 	const { loading, error, data } = useQuery(GET_PINNED_REPOS);
-	const [radioValue, setRadioValue] = useState("");
+	const [rSelected, setRSelected] = useState("");
 
 	if (loading) return (
 		<Loading
@@ -23,10 +24,10 @@ function RepoCards(props) {
 	const pinEdges = data.user.pinnedItems.edges
 
 	return (
-		pinEdges.map((pin, idx) => (
+		pinEdges.map(pin => (
 			<Card
 				key={pin.node.name}
-				className="text-center">
+				className="repo-card">
 				<Card.Title as="h2"> {pin.node.name}</Card.Title>
 				<Card.Body >
 					<Card.Link href={pin.node.url}>
@@ -34,31 +35,26 @@ function RepoCards(props) {
 					</Card.Link>
 					<Card.Text> {pin.node.description}</Card.Text>
 				</Card.Body>
-				<ButtonGroup toggle>
-					<ToggleButton
+				<ButtonGroup>
+					<Button
 						key={pin.node.name}
-						type="radio"
-						variant="outline-secondary"
-						name="Button Radio"
-						value={pin.node.name}
-						checked={radioValue === pin.node.name}
-						onChange={(e) => setRadioValue(e.currentTarget.value)}
+						outline
+						color="secondary"
+						active={rSelected === pin.node.name}
 						onClick={() => {
-							console.log(`${idx} card clicked. click value: ${props.clicked}`)
-							props.setRepoInfo(
-								{
-									name: pin.node.name,
-									owner: pin.node.owner.login
-								})
-							// props.setClicked(!props.clicked)
-							if (radioValue === pin.node.name) {
-								// props.setClicked(prevVal => !prevVal)
-								props.setClicked(false)
+							setRSelected(pin.node.name)
+							props.setRepoInfo({
+								name: pin.node.name,
+								owner: pin.node.owner.login
+							})
+							if (rSelected === pin.node.name) {
+								setRSelected("")
+								props.setClicked(prevVal => !prevVal)
 							} else { props.setClicked(true) }
 						}}>
 						Last Update:{' '}
 						{parseDate(pin.node.pushedAt)}
-					</ToggleButton>
+					</Button>
 				</ButtonGroup>
 			</Card>
 		))
