@@ -16,7 +16,7 @@ function Home() {
 	return (
 		<Container>
 			<Jumbo title={title} message={message} />
-			<div className="flex-area">
+			{/* <div className="flex-area">
 				<RepoCards
 					clicked={clicked}
 					setClicked={setClicked}
@@ -25,7 +25,8 @@ function Home() {
 			</div>
 			<CardDeck>
 				{clicked && <CommitCards repoInfo={repoInfo} />}
-			</CardDeck>
+			</CardDeck> */}
+			<Projects />
 		</Container>
 	);
 }
