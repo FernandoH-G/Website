@@ -1,18 +1,25 @@
+import { useEffect } from "react"
 import { Container, Card, CardDeck, ListGroup } from "react-bootstrap"
 
-import Jumbo from "../Component/Jumbo"
+// import Jumbo from "../Component/Jumbo"
 import about_me from "./../Text/about.json"
 
+// Why is this needed?
 const aLinkStyle = {
 }
 
-function About() {
+function About(props) {
 	const title = "Fernando Herrera-Gomez"
 	const message = "Software Developer"
 
+	useEffect(() => {
+		console.log("About useEffect")
+		props.setHeaderMessage({ title: title, subtitle: message })
+	}, [props.setHeaderMessage])
+
 	return (
 		<Container >
-			<Jumbo title={title} message={message} />
+			{/* <Jumbo title={title} message={message} /> */}
 			<h2>Bio</h2>
 			<p >
 				I was born in Fresno, CA. My folks moved a lot to follow their seasonal work. Eventually we settled in Bakersfield CA. Going into <a href="https://www.csub.edu/">California State University Bakersfield</a>, I had it as my goal to eventually become a lawyer. In order to fulfill this goal, I studied and eventually graduated as the outstanding graduate in Philosophy for 2014.

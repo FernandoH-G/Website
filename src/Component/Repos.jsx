@@ -1,13 +1,13 @@
-import { useState } from "react"
+// import { useState } from "react"
 // import { Card, ButtonGroup, ToggleButton } from "react-bootstrap"
 import { useQuery } from '@apollo/client'
 
 import Loading from "../Component/Loading"
 import { GET_PINNED_REPOS } from "../Util/query"
-import { parseDate, chooseIMG } from "./../Util/helpers"
+import { chooseIMG } from "./../Util/helpers"
 function Repos() {
   const { loading, error, data } = useQuery(GET_PINNED_REPOS);
-  const [radioValue, setRadioValue] = useState("");
+  // const [radioValue, setRadioValue] = useState("");
 
   if (loading) return (
     <Loading
@@ -28,10 +28,11 @@ function Repos() {
       key={idx}
     >
       {/* Repo Image */}
-      <img 
-      height="200" 
-      src={chooseIMG(pin.node.name)}
-      style={{borderRadius: "45px"}} />
+      <img
+      alt="repo"
+        height="200"
+        src={chooseIMG(pin.node.name)}
+        style={{ borderRadius: "45px" }} />
       {/* Repo Info */}
       <div className="repo-info">
         {/* Repo Name */}
