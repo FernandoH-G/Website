@@ -47,11 +47,11 @@ function About(props) {
 				))}
 			</CardDeck>}
 			<br />
-			<h2>Contact</h2>
+			{/* <h2>Contact</h2>
 			<ListGroup horizontal>
 				<ListGroup.Item><a style={aLinkStyle} href="https://github.com/FernandoH-G">Github</a> </ListGroup.Item>
 				<ListGroup.Item><a style={aLinkStyle} href="https://www.linkedin.com/in/fernando-herrera-4040/">Linkedin</a> </ListGroup.Item>
-			</ListGroup>
+			</ListGroup> */}
 
 
 		</Container>
