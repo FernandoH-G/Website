@@ -1,11 +1,12 @@
 import { useEffect } from "react"
-import { Container, Card, CardDeck, ListGroup } from "react-bootstrap"
+import {
+	Container,
+	Card,
+	CardDeck,
+	// ListGroup
+} from "react-bootstrap"
 
 import about_me from "./../Text/about.json"
-
-// Why is this needed?
-const aLinkStyle = {
-}
 
 function About(props) {
 	const { setHeaderMessage } = props
@@ -49,8 +50,8 @@ function About(props) {
 			<br />
 			{/* <h2>Contact</h2>
 			<ListGroup horizontal>
-				<ListGroup.Item><a style={aLinkStyle} href="https://github.com/FernandoH-G">Github</a> </ListGroup.Item>
-				<ListGroup.Item><a style={aLinkStyle} href="https://www.linkedin.com/in/fernando-herrera-4040/">Linkedin</a> </ListGroup.Item>
+				<ListGroup.Item><a href="https://github.com/FernandoH-G">Github</a> </ListGroup.Item>
+				<ListGroup.Item><a href="https://www.linkedin.com/in/fernando-herrera-4040/">Linkedin</a> </ListGroup.Item>
 			</ListGroup> */}
 
 
