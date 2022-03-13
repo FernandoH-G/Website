@@ -51,7 +51,6 @@ function App() {
 						render={(props) => (
 							<About
 								{...props}
-								// Pass a useCallback of setHeaderMessage
 								setHeaderMessage={setHeaderMessage}
 							/>
 						)}

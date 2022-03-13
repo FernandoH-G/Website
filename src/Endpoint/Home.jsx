@@ -3,12 +3,11 @@ import { Container } from "react-bootstrap"
 import CardDeck from "react-bootstrap/CardDeck"
 
 import CommitCards from "../Component/CommitCards"
-// import Jumbo from "../Component/Jumbo"
 import RepoCards from "../Component/RepoCards"
-// import Projects from "../Component/Projects"
 import { useEffect } from "react"
 
 function Home(props) {
+	const { setHeaderMessage } = props
 	const title = "Projects"
 	const message = "Projects fetched from Github using their GQL API."
 	const [clicked, setClicked] = useState(() => false)
@@ -16,8 +15,8 @@ function Home(props) {
 
 	useEffect(() => {
 		console.log("Home useEffect")
-		props.setHeaderMessage({ title: title, subtitle: message })
-	}, [props.setHeaderMessage])
+		setHeaderMessage({ title: title, subtitle: message })
+	}, [setHeaderMessage])
 
 	return (
 		<Container>

@@ -1,7 +1,6 @@
 import { useEffect } from "react"
 import { Container, Card, CardDeck, ListGroup } from "react-bootstrap"
 
-// import Jumbo from "../Component/Jumbo"
 import about_me from "./../Text/about.json"
 
 // Why is this needed?
@@ -9,13 +8,14 @@ const aLinkStyle = {
 }
 
 function About(props) {
+	const { setHeaderMessage } = props
 	const title = "Fernando Herrera-Gomez"
 	const message = "Software Developer"
 
 	useEffect(() => {
 		console.log("About useEffect")
-		props.setHeaderMessage({ title: title, subtitle: message })
-	}, [props.setHeaderMessage])
+		setHeaderMessage({ title: title, subtitle: message })
+	}, [setHeaderMessage])
 
 	return (
 		<Container >
