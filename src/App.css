@@ -36,7 +36,29 @@
     flex-direction: column;
 }
 
-/* .commit-flex {
+/***************************************************************/
+.nav-button-style {
+    height: 40px;
+    width: 40px;
+}
+
+.project-info-style {
+    display: flex;
+}
+
+.column-style {
     display: flex;
     flex-direction: column;
-} */
+    max-width: 50%;
+}
+
+@media screen and (max-width: 980px) {
+    .project-info-style {
+        display: block;
+    }
+    .column-style {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+    }
+}

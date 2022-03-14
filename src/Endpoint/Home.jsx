@@ -17,19 +17,6 @@ function Home(props) {
 	const [clicked, setClicked] = useState(() => false)
 	const [repoInfo, setRepoInfo] = useState(null)
 
-
-	const navButtonStyle = {
-		height: "40px",
-		width: "40px"
-	}
-
-	const columnStyle = {
-		display: "flex",
-		flexDirection: "column",
-		flexGrow: 1,
-		maxWidth: "50%",
-	}
-
 	useEffect(() => {
 		setHeaderMessage({ title: title, subtitle: message })
 	}, [setHeaderMessage])
@@ -37,24 +24,21 @@ function Home(props) {
 	return (
 		<Container>
 			{/* Outer div to hold info | commits */}
-			<div style={{
-				display: "flex",
-				flexWrap: "wrap"
-			}}>
+			<div className="project-info-style">
 				{/* Info */}
-				<div style={columnStyle}>
+				<div className="column-style">
 					<div>
 						<BackIcon
-							style={navButtonStyle}
+							className="nav-button-style"
 						/>
 						<ForwardIcon
-							style={navButtonStyle}
+							className="nav-button-style"
 						/>
 					</div>
 					<Info />
 				</div>
 				{/* Commits */}
-				<div style={columnStyle}>
+				<div className="column-style">
 					<div>
 						Last Updated
 					</div>
