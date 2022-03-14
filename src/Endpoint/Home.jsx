@@ -24,9 +24,9 @@ function Home(props) {
 	return (
 		<Container>
 			{/* Outer div to hold info | commits */}
-			<div className="project-info-style">
+			<main className="project-info-style">
 				{/* Info */}
-				<div className="column-style">
+				<section className="column-style">
 					<div>
 						<BackIcon
 							className="nav-button-style"
@@ -36,15 +36,15 @@ function Home(props) {
 						/>
 					</div>
 					<Info />
-				</div>
+				</section>
 				{/* Commits */}
-				<div className="column-style">
+				<section className="column-style">
 					<div>
 						Last Updated
 					</div>
 					<Commits />
-				</div>
-			</div>
+				</section>
+			</main>
 			{/* <div className="flex-area">
 				<RepoCards
 					clicked={clicked}
