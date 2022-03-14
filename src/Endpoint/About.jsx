@@ -14,7 +14,6 @@ function About(props) {
 	const message = "Software Developer"
 
 	useEffect(() => {
-		console.log("About useEffect")
 		setHeaderMessage({ title: title, subtitle: message })
 	}, [setHeaderMessage])
 
