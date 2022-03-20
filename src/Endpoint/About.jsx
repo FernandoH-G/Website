@@ -19,7 +19,6 @@ function About(props) {
 
 	return (
 		<Container >
-			{/* <Jumbo title={title} message={message} /> */}
 			<h2>Bio</h2>
 			<p >
 				I was born in Fresno, CA. My folks moved a lot to follow their seasonal work. Eventually we settled in Bakersfield CA. Going into <a href="https://www.csub.edu/">California State University Bakersfield</a>, I had it as my goal to eventually become a lawyer. In order to fulfill this goal, I studied and eventually graduated as the outstanding graduate in Philosophy for 2014.
@@ -32,7 +31,7 @@ function About(props) {
 			</p>
 			<br />
 			<h2>Interests</h2>
-			{<CardDeck style={{ marginBottom: "34px" }}>
+			<CardDeck style={{ marginBottom: "34px" }}>
 				{about_me.hobbies.map(hobby => (
 					<Card key={hobby.name}>
 						<Card.Header style={{
@@ -45,7 +44,7 @@ function About(props) {
 						}}> {hobby.description}</Card.Body>
 					</Card>
 				))}
-			</CardDeck>}
+			</CardDeck>
 			<br />
 			{/* <h2>Contact</h2>
 			<ListGroup horizontal>

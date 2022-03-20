@@ -1,12 +1,13 @@
 :root {
     --pri: #282c34;
-    --sec: white;
+    --sec: #343a40;
     --ter: #00818A;
+    --txt: white;
 
 }
 
 p {
-    color: var(--sec);
+    color: var(--txt);
 }
 
 h1, h2 {
@@ -77,4 +78,13 @@ h1, h2 {
         flex-direction: column;
         max-width: 100%;
     }
+}
+
+.navigation-bar-style {
+display: flex;
+flex-wrap: wrap;
+margin: 15px 0 15px 0;
+border-radius: 0 35px 0 35px;
+min-height: 220px;
+box-shadow: 4px 5px 9px #00818A;
 }
