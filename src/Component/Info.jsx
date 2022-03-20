@@ -19,7 +19,8 @@ const Info = () => {
           }}
         />
         <p style={{
-          textAlign: "justify"
+          textAlign: "justify",
+          color: "white"
         }}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat ex vel luctus dapibus. Integer tincidunt lectus sit amet nunc consequat, ut euismod ligula congue. Proin ut massa eget urna suscipit sollicitudin nec nec libero. Ut aliquam lorem feugiat massa eleifend feugiat. Donec nec venenatis ipsum, at posuere nulla. Aliquam eget tellus ut purus aliquam faucibus nec eget sem. Nunc porttitor risus at ullamcorper mattis. Quisque cursus aliquet leo, et volutpat lorem tincidunt nec.

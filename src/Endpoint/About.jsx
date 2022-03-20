@@ -37,7 +37,7 @@ function About(props) {
 					<Card key={hobby.name}>
 						<Card.Header style={{
 							backgroundColor: "#343a40",
-							color: "#d7cebb"
+							color: "white"
 						}}> {hobby.name}</Card.Header>
 						<Card.Body style={{
 							backgroundColor: "#282c34",

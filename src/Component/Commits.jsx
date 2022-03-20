@@ -2,9 +2,9 @@ function Commits() {
     return (
         <div >
             {/* Commit Cards */}
-            <div>
+            <p>
                 Commits Cards
-            </div>
+            </p>
         </div>
     )
 }

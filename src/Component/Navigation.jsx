@@ -42,15 +42,12 @@ function Navigation(props) {
 				<div style={{
 					display: "flex",
 					flexDirection: "column",
-					color: "white",
 					width: "470px",
 				}}>
 					<h1 className="display-4">
 						{props.headerMessage.title}
 					</h1>
-					<p className="lead" style={{
-						color: "rgb(177, 173, 173)"
-					}}>
+					<p className="lead" >
 						{props.headerMessage.subtitle}
 					</p>
 				</div>

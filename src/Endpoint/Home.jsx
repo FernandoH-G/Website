@@ -39,9 +39,9 @@ function Home(props) {
 				</section>
 				{/* Commits */}
 				<section className="column-style">
-					<div>
+					<p>
 						Last Updated
-					</div>
+					</p>
 					<Commits />
 				</section>
 			</main>

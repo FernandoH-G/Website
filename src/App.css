@@ -1,3 +1,18 @@
+:root {
+    --pri: #282c34;
+    --sec: white;
+    --ter: #00818A;
+
+}
+
+p {
+    color: var(--sec);
+}
+
+h1, h2 {
+    color: var(--ter)
+}
+
 .title-text-color {
     color: white;
 }
@@ -40,6 +55,7 @@
 .nav-button-style {
     height: 40px;
     width: 40px;
+    fill: white;
 }
 
 .project-info-style {
