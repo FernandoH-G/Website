@@ -81,14 +81,14 @@ h1, h2 {
 }
 
 /* Why is using this css not working?*/
-.header-bar-style {
+/* .header-bar-style {
     display: flex;
     flex-wrap: wrap;
     margin: 15px 0 15px 0;
     border-radius: 0 35px 0 35px;
     min-height: 220px;
-    /* box-shadow: 4px 5px 9px #00818A; */
-}
+    box-shadow: 4px 5px 9px #00818A;
+} */
 
 .repo-image-style {
     float: left;
