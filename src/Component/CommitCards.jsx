@@ -12,13 +12,13 @@ const CommitCards = (props) => {
 	const owner = props.repoInfo.owner
 	const { loading, error, data } = useQuery(GET_REPO_COMMITS, {
 		variables: { name, owner },
-	});
+	})
 	if (loading) return (
 		<Loading message={`Fetching ${name} commits...`} color="secondary" />
-	);
+	)
 	if (error) return (
 		<Loading message={`Error fetching ${name} commits.`} color="danger" />
-	);
+	)
 
 	const commits = data.repository.defaultBranchRef.target.history.edges
 	return commits.map(com => (

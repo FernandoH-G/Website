@@ -25,26 +25,36 @@ function Home(props) {
 	useEffect(() => {
 		setHeaderMessage({ title: title, subtitle: message })
 	}, [setHeaderMessage])
-	// useEffect(() => {
-	// 	if (data !== undefined) {
-	// 		setRepoInfo(currentRepo)
-	// 	}
-	// }, [data])
 	if (loading) return (
-		<Loading
-			message="Fetching pinned repositories..."
-			color="secondary"
-		/>
+		<Container>
+			<main className="project-info-style">
+				<section className="column-style">
+					<Loading
+						message="Fetching pinned repositories..."
+						color="secondary"
+					/>
+				</section>
+			</main>
+		</Container>
 	)
 	if (error) return (
-		<Loading
-			message="Error fetching pinned repositories."
-			color="danger" />
+		<Container>
+			<main className="project-info-style">
+				<section className="column-style">
+					<Loading
+						message="Fetching pinned repositories..."
+						color="secondary"
+					/>
+				</section>
+			</main>
+		</Container>
 	)
 	const pinEdges = data.user.pinnedItems.edges
+	console.log("pinEdges: ", pinEdges)
 	// currentRepo contains fields:
 	// name, description, openGraphImageUrl, etc.
 	const currentRepo = pinEdges[0].node
+	console.log("currentRepo: ", currentRepo)
 
 	return (
 		<Container>
@@ -67,7 +77,7 @@ function Home(props) {
 					<p>
 						Last Updated
 					</p>
-					<Commits />
+					<Commits currentRepo={currentRepo} />
 				</section>
 			</main>
 			{/* <div className="flex-area">

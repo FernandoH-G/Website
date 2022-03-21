@@ -1,12 +1,12 @@
 import { parseDate, chooseIMG } from "./../Util/helpers"
 const Info = (props) => {
-  console.log("currentRepo: ", props.currentRepo)
   return (
     <article style={{ display: "flex" }}>
       {/* This div is needed as a container for the text to wrap around the img. */}
       <div>
         <img
           src={chooseIMG(props.currentRepo.name)}
+          // src="https://avatars.githubusercontent.com/u/23583398?s=400&v=4"
           alt="default pig"
           width="200px"
           height="200px"
