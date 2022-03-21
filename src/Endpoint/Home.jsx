@@ -1,25 +1,50 @@
 import { useState } from "react"
 import { Container } from "react-bootstrap"
-import CardDeck from "react-bootstrap/CardDeck"
+// import CardDeck from "react-bootstrap/CardDeck"
 
-import CommitCards from "../Component/CommitCards"
-import RepoCards from "../Component/RepoCards"
+// import CommitCards from "../Component/CommitCards"
+// import RepoCards from "../Component/RepoCards"
 import Commits from "../Component/Commits"
 import Info from "../Component/Info"
 import { useEffect } from "react"
 import { ReactComponent as BackIcon } from "../Images/arrow_back_black_24dp.svg"
 import { ReactComponent as ForwardIcon } from "../Images/arrow_forward_black_24dp.svg"
 
+import Loading from "../Component/Loading"
+import { GET_PINNED_REPOS } from "../Util/query"
+import { useQuery } from '@apollo/client'
+
 function Home(props) {
 	const { setHeaderMessage } = props
 	const title = "Projects"
 	const message = "Projects fetched from Github using their GQL API."
 	const [clicked, setClicked] = useState(() => false)
-	const [repoInfo, setRepoInfo] = useState(null)
+	const { loading, error, data } = useQuery(GET_PINNED_REPOS);
+	// const [repoInfo, setRepoInfo] = useState(null)
 
 	useEffect(() => {
 		setHeaderMessage({ title: title, subtitle: message })
 	}, [setHeaderMessage])
+	// useEffect(() => {
+	// 	if (data !== undefined) {
+	// 		setRepoInfo(currentRepo)
+	// 	}
+	// }, [data])
+	if (loading) return (
+		<Loading
+			message="Fetching pinned repositories..."
+			color="secondary"
+		/>
+	)
+	if (error) return (
+		<Loading
+			message="Error fetching pinned repositories."
+			color="danger" />
+	)
+	const pinEdges = data.user.pinnedItems.edges
+	// currentRepo contains fields:
+	// name, description, openGraphImageUrl, etc.
+	const currentRepo = pinEdges[0].node
 
 	return (
 		<Container>
@@ -35,7 +60,7 @@ function Home(props) {
 							className="nav-button-style"
 						/>
 					</div>
-					<Info />
+					<Info currentRepo={currentRepo} />
 				</section>
 				{/* Commits */}
 				<section className="column-style">

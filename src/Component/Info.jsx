@@ -1,33 +1,26 @@
-const Info = () => {
+import { parseDate, chooseIMG } from "./../Util/helpers"
+const Info = (props) => {
+  console.log("currentRepo: ", props.currentRepo)
   return (
-    <div
-      style={{
-        display: "flex"
-      }}
-    >
-      < div>
+    <article style={{ display: "flex" }}>
+      {/* This div is needed as a container for the text to wrap around the img. */}
+      <div>
         <img
-          src="https://avatars.githubusercontent.com/u/23583398?s=400&v=4"
+          src={chooseIMG(props.currentRepo.name)}
           alt="default pig"
           width="200px"
           height="200px"
-          style={{
-            float: "left",
-            marginTop: "5px",
-            marginRight: "5px",
-            borderRadius: "30px"
-          }}
+          className="repo-image-style"
         />
-        <p style={{
-          textAlign: "justify",
-          color: "white"
-        }}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat ex vel luctus dapibus. Integer tincidunt lectus sit amet nunc consequat, ut euismod ligula congue. Proin ut massa eget urna suscipit sollicitudin nec nec libero. Ut aliquam lorem feugiat massa eleifend feugiat. Donec nec venenatis ipsum, at posuere nulla. Aliquam eget tellus ut purus aliquam faucibus nec eget sem. Nunc porttitor risus at ullamcorper mattis. Quisque cursus aliquet leo, et volutpat lorem tincidunt nec.
-          {/* wrap text */}
+        <p style={{ textAlign: "justify", }}>
+          {props.currentRepo.name}
+        </p>
+        <p style={{ textAlign: "justify", }}>
+          {props.currentRepo.description}
+          {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat ex vel luctus dapibus. Integer tincidunt lectus sit amet nunc consequat, ut euismod ligula congue. Proin ut massa eget urna suscipit sollicitudin nec nec libero. Ut aliquam lorem feugiat massa eleifend feugiat. Donec nec venenatis ipsum, at posuere nulla. Aliquam eget tellus ut purus aliquam faucibus nec eget sem. Nunc porttitor risus at ullamcorper mattis. Quisque cursus aliquet leo, et volutpat lorem tincidunt nec. */}
         </p>
       </div >
-    </div>
+    </article>
   )
 }
 

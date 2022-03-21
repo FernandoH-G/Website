@@ -88,3 +88,14 @@ border-radius: 0 35px 0 35px;
 min-height: 220px;
 /* box-shadow: 4px 5px 9px #00818A; */
 }
+
+.repo-image-style {
+    float: left;
+    margin-top: 5px;
+    margin-right: 5px;
+    border-radius: 30px;
+}
+
+.loading-style {
+    width: 50vw;
+}
