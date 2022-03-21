@@ -8,19 +8,20 @@ function Navigation(props) {
 		<Container >
 			<Navbar
 				bg="dark"
-				// style={{
-				// 	display: "flex",
-				// 	flexWrap: "wrap",
-				// 	margin: "15px 0 15px 0",
-				// 	borderRadius: "0 35px 0 35px",
-				// 	// If set height, the contents will spill over since it can't 
-				// 	// 'grow' to fill content. minHeight sets a floor,
-				// 	// not a ceiling. Element can grow to fit content.
-				// 	minHeight: "220px",
-				// 	boxShadow: "4px 5px 9px #00818A"
-				// 	// Not sure I need padding...
-				// }}
-				className="navigation-bar-style"
+				style={{
+					display: "flex",
+					flexWrap: "wrap",
+					margin: "15px 0 15px 0",
+					borderRadius: "0 35px 0 35px",
+					// If set height, the contents will spill over since it can't 
+					// 'grow' to fill content. minHeight sets a floor,
+					// not a ceiling. Element can grow to fit content.
+					minHeight: "220px",
+					// boxShadow: "4px 5px 9px #00818A"
+					// Not sure I need padding...
+				}}
+				// Why is using this css not working?
+				// className="header-bar-style"
 			>
 				<Link className="navbar-brand" to="/">
 					<Navbar.Brand >

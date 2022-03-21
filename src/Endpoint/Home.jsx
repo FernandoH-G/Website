@@ -50,7 +50,6 @@ function Home(props) {
 		</Container>
 	)
 	const pinEdges = data.user.pinnedItems.edges
-	console.log("pinEdges: ", pinEdges)
 	// currentRepo contains fields:
 	// name, description, openGraphImageUrl, etc.
 	const currentRepo = pinEdges[0].node
