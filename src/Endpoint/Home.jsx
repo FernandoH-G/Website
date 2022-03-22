@@ -16,14 +16,14 @@ import { GET_PINNED_REPOS } from "../Util/query"
 import { useQuery } from '@apollo/client'
 
 
-import Jumbo from "../Component/Jumbo"
+// import Jumbo from"../Component/Jumbo"
 
 
 function Home(props) {
 	const { setHeaderMessage } = props
 	const title = "Projects"
 	const message = "Projects fetched from Github using their GQL API."
-	const { loading, error, data } = useQuery(GET_PINNED_REPOS);
+	const {  data } = useQuery(GET_PINNED_REPOS);
 	// const [clicked, setClicked] = useState(() => false)
 	const [repos, setRepos] = useState(null)
 	const [repoIndex, setRepoIndex] = useState(0)
