@@ -1,4 +1,4 @@
-import { useState } from "react"
+// import { useState } from "react"
 import { Container } from "react-bootstrap"
 // import CardDeck from "react-bootstrap/CardDeck"
 
@@ -18,8 +18,8 @@ function Home(props) {
 	const { setHeaderMessage } = props
 	const title = "Projects"
 	const message = "Projects fetched from Github using their GQL API."
-	const [clicked, setClicked] = useState(() => false)
 	const { loading, error, data } = useQuery(GET_PINNED_REPOS);
+	// const [clicked, setClicked] = useState(() => false)
 	// const [repoInfo, setRepoInfo] = useState(null)
 
 	useEffect(() => {
@@ -79,16 +79,6 @@ function Home(props) {
 					<Commits currentRepo={currentRepo} />
 				</section>
 			</main>
-			{/* <div className="flex-area">
-				<RepoCards
-					clicked={clicked}
-					setClicked={setClicked}
-					setRepoInfo={setRepoInfo}
-				/>
-			</div>
-			<CardDeck>
-				{clicked && <CommitCards repoInfo={repoInfo} />}
-			</CardDeck> */}
 		</Container>
 	);
 }
