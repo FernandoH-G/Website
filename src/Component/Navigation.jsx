@@ -1,7 +1,9 @@
+// Internal Components
+import ic_my_pig from "./../Images/ic_my_pig_55x55.png"
+
+// External Library
 import { Navbar, Nav, Container } from 'react-bootstrap'
 import { Link, NavLink } from "react-router-dom";
-
-import ic_my_pig from "./../Images/ic_my_pig_55x55.png"
 
 function Navigation(props) {
 	return (
@@ -20,8 +22,8 @@ function Navigation(props) {
 					// boxShadow: "4px 5px 9px #00818A"
 					// Not sure I need padding...
 				}}
-				// Why is using this css not working?
-				// className="header-bar-style"
+			// Why is using this css not working?
+			// className="header-bar-style"
 			>
 				<Link className="navbar-brand" to="/">
 					<Navbar.Brand >
@@ -36,7 +38,6 @@ function Navigation(props) {
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="mr-auto" >
 						<NavLink className="nav-link" to="/about" style={{
-							// color: "#d7cebb"
 							color: "white"
 						}} >About</NavLink>
 					</Nav>

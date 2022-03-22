@@ -1,5 +1,6 @@
-// import { parseDate, chooseIMG } from "./../Util/helpers"
+// Internal Components
 import { chooseIMG } from "./../Util/helpers"
+
 const Info = (props) => {
   return (
     <article style={{ display: "flex" }}>
