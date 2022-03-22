@@ -10,6 +10,7 @@ import { useEffect } from "react"
 import { ReactComponent as BackIcon } from "../Images/arrow_back_black_24dp.svg"
 import { ReactComponent as ForwardIcon } from "../Images/arrow_forward_black_24dp.svg"
 
+import { parseDate } from "./../Util/helpers"
 import Loading from "../Component/Loading"
 import { GET_PINNED_REPOS } from "../Util/query"
 import { useQuery } from '@apollo/client'
@@ -74,7 +75,7 @@ function Home(props) {
 				{/* Commits */}
 				<section className="column-style">
 					<p>
-						Last Updated
+						Last Repository Update: {parseDate(currentRepo.pushedAt)}
 					</p>
 					<Commits currentRepo={currentRepo} />
 				</section>

@@ -37,7 +37,7 @@ query GetRepoCommits($name: String!, $owner: String!) {
     defaultBranchRef {
       target {
         ... on Commit {
-          history(first: 5) {
+          history(first: 3) {
             edges {
               node {
                 committedDate
