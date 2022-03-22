@@ -1,15 +1,17 @@
 // React
 import { useEffect } from "react"
+
+// Internal Components
+import aboutMe from "./../Text/about.json"
+
 // External Library
+import { Typography } from '@mui/material';
 import {
 	Container,
 	Card,
 	CardDeck,
-	// ListGroup
 } from "react-bootstrap"
-import { Typography } from '@mui/material';
 
-import aboutMe from "./../Text/about.json"
 
 function About(props) {
 	const { setHeaderMessage } = props
