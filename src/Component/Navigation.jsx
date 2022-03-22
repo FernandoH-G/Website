@@ -4,6 +4,7 @@ import ic_my_pig from "./../Images/ic_my_pig_55x55.png"
 // External Library
 import { Navbar, Nav, Container } from 'react-bootstrap'
 import { Link, NavLink } from "react-router-dom";
+import { Typography } from '@mui/material';
 
 function Navigation(props) {
 	return (
@@ -14,13 +15,13 @@ function Navigation(props) {
 					display: "flex",
 					flexWrap: "wrap",
 					margin: "15px 0 15px 0",
+					padding: ".5rem 1.5rem",
 					borderRadius: "0 35px 0 35px",
 					// If set height, the contents will spill over since it can't 
 					// 'grow' to fill content. minHeight sets a floor,
 					// not a ceiling. Element can grow to fit content.
-					minHeight: "220px",
-					// boxShadow: "4px 5px 9px #00818A"
-					// Not sure I need padding...
+					minHeight: "200px",
+					boxShadow: "4px 5px 9px"
 				}}
 			// Why is using this css not working?
 			// className="header-bar-style"
@@ -37,9 +38,19 @@ function Navigation(props) {
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="mr-auto" >
-						<NavLink className="nav-link" to="/about" style={{
-							color: "white"
-						}} >About</NavLink>
+						<NavLink
+							className="nav-link"
+							to="/about"
+							style={{
+								color: "white"
+							}}
+						>
+							<Typography
+							variant="button"
+							>
+								About
+							</Typography>
+						</NavLink>
 					</Nav>
 				</Navbar.Collapse>
 				{/* Title and Subtitle placed inside right of Navigation. */}
@@ -48,12 +59,23 @@ function Navigation(props) {
 					flexDirection: "column",
 					width: "470px",
 				}}>
-					<h1 className="display-4">
+					<Typography
+						variant="h2"
+					>
 						{props.headerMessage.title}
-					</h1>
-					<p className="lead" >
+					</Typography>
+					{/* <h1 className="display-4">
+						{props.headerMessage.title}
+					</h1> */}
+					<Typography
+						variant="subtitle"
+						style={{ color: "white" }}
+					>
 						{props.headerMessage.subtitle}
-					</p>
+					</Typography>
+					{/* <p className="lead" >
+						{props.headerMessage.subtitle}
+					</p> */}
 				</div>
 			</Navbar>
 		</Container>

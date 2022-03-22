@@ -13,6 +13,7 @@ import { ReactComponent as ForwardIcon } from "../Images/arrow_forward_black_24d
 // External Library
 import { Container } from "react-bootstrap"
 import { useQuery } from '@apollo/client'
+import { Typography } from '@mui/material';
 
 function Home(props) {
 	const { setHeaderMessage } = props
@@ -86,9 +87,12 @@ function Home(props) {
 				</section>
 				{/* Commits */}
 				<section className="column-style">
-					<p>
+					<Typography
+						style={{ color: "white" }}
+						gutterBottom
+						variant="overline">
 						Last Repository Update: {parseDate(currentRepo.pushedAt)}
-					</p>
+					</Typography>
 					<Commits currentRepo={currentRepo} />
 				</section>
 			</main>

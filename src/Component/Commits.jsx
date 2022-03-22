@@ -7,6 +7,7 @@ import { GET_REPO_COMMITS } from "../Util/query"
 import { Card } from "react-bootstrap"
 import { useQuery } from '@apollo/client'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import { Typography } from '@mui/material';
 
 function Commits(props) {
     const repoName = props.currentRepo.name
@@ -29,10 +30,13 @@ function Commits(props) {
             style={{ marginBottom: "15px" }}
         >
             <Card.Header style={{
+                display: "flex",
                 backgroundColor: "#343a40",
                 color: "white"
             }}>
-                Commit Date:<br />{parseDate(com.node.committedDate)}
+                <Typography>
+                    Commit Date: {parseDate(com.node.committedDate)}
+                </Typography>
                 <Card.Link href={com.node.url}>
                     <OpenInNewIcon htmlColor="white" fontSize="small" />
                 </Card.Link>
@@ -41,7 +45,9 @@ function Commits(props) {
                 backgroundColor: "#282c34",
                 color: "white"
             }}>
-                {parseText(com.node.message)}
+                <Typography>
+                    {parseText(com.node.message)}
+                </Typography>
             </Card.Body>
         </Card>
     ))

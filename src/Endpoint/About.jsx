@@ -10,8 +10,9 @@ import about_me from "./../Text/about.json"
 
 function About(props) {
 	const { setHeaderMessage } = props
-	const title = "Fernando Herrera-Gomez"
-	const message = "Software Developer"
+	// const title = "Fernando Herrera-Gomez"
+	const title = "Fernando H-G"
+	const message = "Software Developer & occassional Philosopher."
 
 	useEffect(() => {
 		setHeaderMessage({ title: title, subtitle: message })
