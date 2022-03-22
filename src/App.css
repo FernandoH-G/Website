@@ -92,7 +92,6 @@ h1, h2 {
 
 .repo-image-style {
     float: left;
-    margin-top: 5px;
-    margin-right: 5px;
+    margin: 0 10px 0 0;
     border-radius: 30px;
 }
