@@ -1,5 +1,7 @@
 // Internal Components
-import ic_my_pig from "./../Images/ic_my_pig_55x55.png"
+// It's easier to down size a png if it's big to begin with.
+// Doesn't lose quality, at least to my eyes.
+import ic_my_pig from "./../Images/ic_my_pig_512x512.png"
 
 // External Library
 import { Navbar, Nav, Container } from 'react-bootstrap'
@@ -30,8 +32,11 @@ function Navigation(props) {
 					<Navbar.Brand >
 						<img
 							src={ic_my_pig}
-							className="d-inline-block align-top"
-							alt="Brand logo"
+							width="100px"
+							height="100px"
+							// className="d-inline-block align-top"
+							alt="FH-G logo"
+							style={{ borderRadius: "50px" }}
 						/>
 					</Navbar.Brand>
 				</Link>
@@ -48,7 +53,6 @@ function Navigation(props) {
 							activeStyle={{
 								color: "#00818A",
 								textShadow: "1px 1px 2px #00818A",
-								// textDecoration: "underline"
 							}}
 						>
 							<Typography
@@ -66,7 +70,6 @@ function Navigation(props) {
 							activeStyle={{
 								color: "#00818A",
 								textShadow: "1px 1px 2px #00818A",
-								// textDecoration: "underline"
 							}}
 						>
 							<Typography
