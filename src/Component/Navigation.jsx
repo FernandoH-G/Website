@@ -39,14 +39,38 @@ function Navigation(props) {
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="mr-auto" >
 						<NavLink
+							exact
+							className="nav-link"
+							to="/"
+							style={{
+								color: "white"
+							}}
+							activeStyle={{
+								color: "#00818A",
+								textShadow: "1px 1px 2px #00818A",
+								// textDecoration: "underline"
+							}}
+						>
+							<Typography
+								variant="button"
+							>
+								Home
+							</Typography>
+						</NavLink>
+						<NavLink
 							className="nav-link"
 							to="/about"
 							style={{
 								color: "white"
 							}}
+							activeStyle={{
+								color: "#00818A",
+								textShadow: "1px 1px 2px #00818A",
+								// textDecoration: "underline"
+							}}
 						>
 							<Typography
-							variant="button"
+								variant="button"
 							>
 								About
 							</Typography>
