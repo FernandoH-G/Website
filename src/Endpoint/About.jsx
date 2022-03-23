@@ -37,12 +37,20 @@ function About(props) {
 			<Typography paragraph>
 				After some time with the internship, I started to have doubts as to my motivation to become a lawyer. After much introspection, I decided to no longer pursue a career in Law. Cut to 2016, I saw myself attending CSUB once more, but this time, as a computer science student! I knew that after my first year, programming was what I wanted to devote my life to.
 			</Typography>
-
 			<Typography variant="h3" gutterBottom>
 				Interests
 			</Typography>
+			<Typography paragraph>
+				My last semester of University consisted of me going to classes, then immediatly going <strong className="flair-text"  >bouldering</strong> in the universitie's recreation center. It was physically and mentally challenging and exhausting, but I loved every minute.
+			</Typography>
+			<Typography paragraph>
+				I have commuted to school and home via bus and <strong className="flair-text">cycling</strong> for 4 years. Be it rain or shine, I rode my bike as part of the commute to my university. It was a very fun and healthy time.
+			</Typography>
+			{/* <Typography paragraph>
+				<strong className="flair-text">Reading</strong> subjects ranging from philosophy books, classic novels, sci-fi, etc.
+			</Typography> */}
 			{/* <CardDeck style={{ marginBottom: "34px" }}> */}
-			<CardDeck >
+			{/* <CardDeck >
 				{aboutMe.hobbies.map(hobby => (
 					<Card key={hobby.name}>
 						<Card.Header style={{
@@ -66,7 +74,7 @@ function About(props) {
 					</Card>
 				))}
 			</CardDeck>
-			<br />
+			<br /> */}
 			{/* <h2>Contact</h2>
 			<ListGroup horizontal>
 				<ListGroup.Item><a href="https://github.com/FernandoH-G">Github</a> </ListGroup.Item>
