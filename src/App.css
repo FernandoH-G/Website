@@ -106,5 +106,23 @@ h1, h2, h3 {
 }
 
 .flair-text {
-    color: var(--ter)
+    /* color: var(--ter) */
+    text-decoration: underline;
+}
+
+/* a:link {
+    color: yellow
+}
+a:visited {
+    color: pink
+}
+a:hover {
+    color: red;
+}
+a:active {
+    color: purple
+} */
+
+::selection {
+    background: #94b0b3;
 }
