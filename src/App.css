@@ -57,6 +57,11 @@ h1, h2, h3 {
     height: 40px;
     width: 40px;
     fill: white;
+    cursor: pointer;
+}
+.nav-button-style:active{
+    /* box-shadow: 0 5px var(--ter); */
+    transform: translateY(4px)
 }
 
 .project-info-style {
