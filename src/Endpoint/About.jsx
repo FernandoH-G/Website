@@ -2,14 +2,14 @@
 import { useEffect } from "react"
 
 // Internal Components
-import aboutMe from "./../Text/about.json"
+// import aboutMe from "./../Text/about.json"
 
 // External Library
 import { Typography } from '@mui/material';
 import {
 	Container,
-	Card,
-	CardDeck,
+	// Card,
+	// CardDeck,
 } from "react-bootstrap"
 
 
