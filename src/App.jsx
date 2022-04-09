@@ -45,7 +45,6 @@ function App() {
 					headerMessage={headerMessage}
 				/>
 				<Switch>
-					{/* <Route path="/about" component={About} /> */}
 					<Route
 						path="/about"
 						render={(props) => (
@@ -57,7 +56,6 @@ function App() {
 					/>
 					<Route
 						path="/" exact
-						// component={Home} 
 						render={(props) => (
 							<Home
 								{...props}

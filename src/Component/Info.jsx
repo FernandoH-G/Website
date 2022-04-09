@@ -3,18 +3,18 @@ import { chooseIMG } from "./../Util/helpers"
 
 // External Library
 import { Typography } from '@mui/material';
+import { Link } from "react-router-dom"
 
 const Info = (props) => {
   return (
     <article style={{ display: "flex" }}>
       {/* This div is needed as a container for the text to wrap around the img. */}
       <div>
-        <Typography
-          variant="h3"
-          gutterBottom
-        >
-          {props.currentRepo.name}
-        </Typography>
+        <a href={`${props.currentRepo.url}`} style={{ textDecoration: "none" }}>
+          <Typography variant="h3" gutterBottom>
+            {props.currentRepo.name}
+          </Typography>
+        </a>
         <img
           src={chooseIMG(props.currentRepo.name)}
           // src="https://avatars.githubusercontent.com/u/23583398?s=400&v=4"
