@@ -19,11 +19,6 @@ It will also hold information about myself and the things I am interested in.
 + Integrate subscriptions on my projects page.
 
 # Screenshots
-
-## Fetching
 <img src="repo-images/new_home_website_redesign_page2.png" width="50%"/>
 <br>
-
-## Loaded
 <img src="repo-images/new_home_website_redesign.png" width="50%"/>
-<br>
