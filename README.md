@@ -20,5 +20,3 @@ It will also hold information about myself and the things I am interested in.
 
 # Screenshots
 <img src="repo-images/new_home_website_redesign.png" width="50%"/>
-<br>
-<img src="repo-images/new_home_website_redesign_page2.png" width="50%"/>
