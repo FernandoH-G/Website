@@ -21,9 +21,9 @@ It will also hold information about myself and the things I am interested in.
 # Screenshots
 
 ## Fetching
-<img src="repo-images/fetching_site.png" width="50%"/>
+<img src="new_home_website_redesign_page2.png" width="50%"/>
 <br>
 
 ## Loaded
-<img src="repo-images/landing_site.PNG" width="50%"/>
+<img src="new_home_website_redesign.png" width="50%"/>
 <br>

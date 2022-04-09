@@ -3,7 +3,6 @@ import { chooseIMG } from "./../Util/helpers"
 
 // External Library
 import { Typography } from '@mui/material';
-import { Link } from "react-router-dom"
 
 const Info = (props) => {
   return (
