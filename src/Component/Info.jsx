@@ -22,15 +22,9 @@ const Info = (props) => {
           height="200px"
           className="repo-image-style"
         />
-        {/* <p style={{ textAlign: "justify", }} className="lead" >
-          {props.currentRepo.name}
-        </p> */}
-        <Typography paragraph >
+        <Typography paragraph style={{marginRight: "16px"}} >
           {props.currentRepo.description}
         </Typography>
-        {/* <p style={{ textAlign: "justify", padding: "21.25px" }}>
-          {props.currentRepo.description}
-        </p> */}
       </div >
     </article>
   )
