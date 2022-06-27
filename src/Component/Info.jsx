@@ -9,11 +9,15 @@ const Info = (props) => {
     <article style={{ display: "flex" }}>
       {/* This div is needed as a container for the text to wrap around the img. */}
       <div>
-        <a href={`${props.currentRepo.url}`} style={{ textDecoration: "none" }}>
-          <Typography variant="h3" gutterBottom>
+        <Typography variant="h3" gutterBottom>
+          <a
+            href={`${props.currentRepo.url}`}
+            style={{ textDecoration: "none" }}
+            className="repo-title-link"
+          >
             {props.currentRepo.name}
-          </Typography>
-        </a>
+          </a>
+        </Typography>
         <img
           src={chooseIMG(props.currentRepo.name)}
           // src="https://avatars.githubusercontent.com/u/23583398?s=400&v=4"
@@ -22,7 +26,7 @@ const Info = (props) => {
           height="200px"
           className="repo-image-style"
         />
-        <Typography paragraph style={{marginRight: "16px"}} >
+        <Typography paragraph style={{ marginRight: "16px" }} >
           {props.currentRepo.description}
         </Typography>
       </div >
