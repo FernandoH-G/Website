@@ -2,7 +2,7 @@
 import { chooseIMG } from "./../Util/helpers"
 
 // External Library
-import { Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
 
 const Info = (props) => {
   return (

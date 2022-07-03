@@ -1,14 +1,14 @@
-// Internal Components
+// Internal
 // It's easier to down size a png if it's big to begin with.
 // Doesn't lose quality, at least to my eyes.
 import ic_my_pig from "./../Images/ic_my_pig_512x512.png"
 
-// External Library
+// External Imports
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
+import Typography from '@mui/material/Typography';
 import { Link, NavLink } from "react-router-dom";
-import { Typography } from '@mui/material';
 
 function Navigation(props) {
 	return (
@@ -36,7 +36,6 @@ function Navigation(props) {
 							src={ic_my_pig}
 							width="100px"
 							height="100px"
-							// className="d-inline-block align-top"
 							alt="FH-G logo"
 							style={{ borderRadius: "50px" }}
 						/>
@@ -93,18 +92,12 @@ function Navigation(props) {
 					>
 						{props.headerMessage.title}
 					</Typography>
-					{/* <h1 className="display-4">
-						{props.headerMessage.title}
-					</h1> */}
 					<Typography
 						variant="subtitle"
 						style={{ color: "white" }}
 					>
 						{props.headerMessage.subtitle}
 					</Typography>
-					{/* <p className="lead" >
-						{props.headerMessage.subtitle}
-					</p> */}
 				</div>
 			</Navbar>
 		</Container>

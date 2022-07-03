@@ -1,7 +1,7 @@
 // React
 import { useState, useEffect } from "react"
 
-// Internal Components
+// Internal
 import Commits from "../Component/Commits"
 import Info from "../Component/Info"
 import Loading from "../Component/Loading"
@@ -12,8 +12,8 @@ import { ReactComponent as ForwardIcon } from "../Images/arrow_forward_black_24d
 
 // External Library
 import Container from "react-bootstrap/Container"
+import Typography from '@mui/material/Typography';
 import { useQuery } from '@apollo/client'
-import { Typography } from '@mui/material';
 
 function Home(props) {
 	const { setHeaderMessage } = props

@@ -39,42 +39,6 @@ function About(props) {
 			<Typography paragraph>
 				I have commuted to school and home via bus and <strong className="flair-text">cycling</strong> for 4 years. Be it rain or shine, I rode my bike as part of the commute to my university. It was a very fun and healthy time.
 			</Typography>
-			{/* <Typography paragraph>
-				<strong className="flair-text">Reading</strong> subjects ranging from philosophy books, classic novels, sci-fi, etc.
-			</Typography> */}
-			{/* <CardDeck style={{ marginBottom: "34px" }}> */}
-			{/* <CardDeck >
-				{aboutMe.hobbies.map(hobby => (
-					<Card key={hobby.name}>
-						<Card.Header style={{
-							backgroundColor: "#343a40",
-							color: "white"
-						}}
-						>
-							<Typography>
-								{hobby.name}
-							</Typography>
-						</Card.Header>
-						<Card.Body style={{
-							backgroundColor: "#282c34",
-							color: "white"
-						}}
-						>
-							<Typography paragraph>
-								{hobby.description}
-							</Typography>
-						</Card.Body>
-					</Card>
-				))}
-			</CardDeck>
-			<br /> */}
-			{/* <h2>Contact</h2>
-			<ListGroup horizontal>
-				<ListGroup.Item><a href="https://github.com/FernandoH-G">Github</a> </ListGroup.Item>
-				<ListGroup.Item><a href="https://www.linkedin.com/in/fernando-herrera-4040/">Linkedin</a> </ListGroup.Item>
-			</ListGroup> */}
-
-
 		</Container>
 	);
 }

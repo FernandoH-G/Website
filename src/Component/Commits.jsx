@@ -5,9 +5,9 @@ import { GET_REPO_COMMITS } from "../Util/query"
 
 // External Library
 import Card from "react-bootstrap/Card"
-import { useQuery } from '@apollo/client'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import { Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import { useQuery } from '@apollo/client'
 
 function Commits(props) {
     const repoName = props.currentRepo.name
