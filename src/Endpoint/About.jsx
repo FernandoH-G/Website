@@ -1,16 +1,9 @@
 // React
 import { useEffect } from "react"
 
-// Internal Components
-// import aboutMe from "./../Text/about.json"
-
 // External Library
-import { Typography } from '@mui/material';
-import {
-	Container,
-	// Card,
-	// CardDeck,
-} from "react-bootstrap"
+import Typography from '@mui/material/Typography';
+import Container from "react-bootstrap/Container"
 
 
 function About(props) {

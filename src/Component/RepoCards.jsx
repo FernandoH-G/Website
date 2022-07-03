@@ -1,6 +1,7 @@
 import { useState } from "react"
-import { Card } from "react-bootstrap"
-import { Button, ButtonGroup } from 'reactstrap';
+import Card from "react-bootstrap/Card"
+import Button from 'reactstrap/Button';
+import ButtonGroup from 'reactstrap/ButtonGroup';
 import { useQuery } from '@apollo/client'
 
 import Loading from "../Component/Loading"

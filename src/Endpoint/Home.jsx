@@ -11,7 +11,7 @@ import { ReactComponent as BackIcon } from "../Images/arrow_back_black_24dp.svg"
 import { ReactComponent as ForwardIcon } from "../Images/arrow_forward_black_24dp.svg"
 
 // External Library
-import { Container } from "react-bootstrap"
+import Container from "react-bootstrap/Container"
 import { useQuery } from '@apollo/client'
 import { Typography } from '@mui/material';
 

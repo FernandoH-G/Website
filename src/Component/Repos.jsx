@@ -1,5 +1,4 @@
 // import { useState } from "react"
-// import { Card, ButtonGroup, ToggleButton } from "react-bootstrap"
 import { useQuery } from '@apollo/client'
 
 import Loading from "../Component/Loading"

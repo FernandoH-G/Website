@@ -4,7 +4,9 @@
 import ic_my_pig from "./../Images/ic_my_pig_512x512.png"
 
 // External Library
-import { Navbar, Nav, Container } from 'react-bootstrap'
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import Container from 'react-bootstrap/Container'
 import { Link, NavLink } from "react-router-dom";
 import { Typography } from '@mui/material';
 
