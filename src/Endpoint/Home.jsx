@@ -73,7 +73,7 @@ function Home(props) {
 			<main className="project-info-style">
 				{/* Info */}
 				<section className="column-style" >
-					<div>
+					<div style={{marginBottom: "12px"}}>
 						<BackIcon
 							className="nav-button-style"
 							onClick={backwardRepo}
