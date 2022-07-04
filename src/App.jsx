@@ -1,7 +1,7 @@
 import './App.css';
 
 import { useState } from "react"
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom/";
 import {
 	ApolloClient,
 	ApolloProvider,
@@ -44,27 +44,29 @@ function App() {
 				<Navigation
 					headerMessage={headerMessage}
 				/>
-				<Switch>
+				<Routes>
 					<Route
 						path="/about"
-						render={(props) => (
-							<About
-								{...props}
-								setHeaderMessage={setHeaderMessage}
-							/>
-						)}
+						element={<About setHeaderMessage={setHeaderMessage} />}
+						// render={(props) => (
+						// 	<About
+						// 		{...props}
+						// 		setHeaderMessage={setHeaderMessage}
+						// 	/>
+						// )}
 					/>
 					<Route
 						path="/" exact
-						render={(props) => (
-							<Home
-								{...props}
-								setHeaderMessage={setHeaderMessage}
-							/>
-						)}
+						element={<Home setHeaderMessage={setHeaderMessage}/>}
+						// render={(props) => (
+						// 	<Home
+						// 		{...props}
+						// 		setHeaderMessage={setHeaderMessage}
+						// 	/>
+						// )}
 					/>
-					<Route path="/test" exact component={Test} />
-				</Switch>
+					{/* <Route path="/test" exact component={Test} /> */}
+				</Routes>
 			</>
 		</ApolloProvider>
 	)
