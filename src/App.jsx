@@ -13,7 +13,7 @@ import { setContext } from '@apollo/client/link/context';
 import Navigation from './Component/Navigation';
 import About from "./Endpoint/About"
 import Home from "./Endpoint/Home"
-import Test from "./Endpoint/Test"
+// import Test from "./Endpoint/Test"
 
 const httpLink = createHttpLink({
 	uri: 'https://api.github.com/graphql',
@@ -38,6 +38,7 @@ const client = new ApolloClient({
 
 function App() {
 	const [headerMessage, setHeaderMessage] = useState({ title: "", subtitle: "" })
+
 	return (
 		<ApolloProvider client={client}>
 			<>
@@ -46,26 +47,14 @@ function App() {
 				/>
 				<Routes>
 					<Route
-						path="/about"
-						element={<About setHeaderMessage={setHeaderMessage} />}
-						// render={(props) => (
-						// 	<About
-						// 		{...props}
-						// 		setHeaderMessage={setHeaderMessage}
-						// 	/>
-						// )}
+						path="/"
+						element={<Home setHeaderMessage={setHeaderMessage} />}
 					/>
 					<Route
-						path="/" exact
-						element={<Home setHeaderMessage={setHeaderMessage}/>}
-						// render={(props) => (
-						// 	<Home
-						// 		{...props}
-						// 		setHeaderMessage={setHeaderMessage}
-						// 	/>
-						// )}
+						path="about"
+						element={<About setHeaderMessage={setHeaderMessage} />}
 					/>
-					{/* <Route path="/test" exact component={Test} /> */}
+					{/* <Route path="/test" element={<Test>} /> */}
 				</Routes>
 			</>
 		</ApolloProvider>

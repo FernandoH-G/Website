@@ -11,6 +11,14 @@ import Typography from '@mui/material/Typography';
 import { Link, NavLink } from "react-router-dom";
 
 function Navigation(props) {
+	const normalStyle = {
+		color: "white"
+	}
+	const activeStyle = {
+		color: "#00818A",
+		textShadow: "1px 1px 2px #00818A",
+	}
+
 	return (
 		<Container >
 			<Navbar
@@ -45,16 +53,14 @@ function Navigation(props) {
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="mr-auto" >
 						<NavLink
-							exact
+							// exact
 							className="nav-link"
 							to="/"
-							style={{
-								color: "white"
-							}}
-							activeStyle={{
-								color: "#00818A",
-								textShadow: "1px 1px 2px #00818A",
-							}}
+							style={({ isActive }) => isActive ? activeStyle : normalStyle}
+						// activeStyle={{
+						// 	color: "#00818A",
+						// 	textShadow: "1px 1px 2px #00818A",
+						// }}
 						>
 							<Typography
 								variant="button"
@@ -64,14 +70,15 @@ function Navigation(props) {
 						</NavLink>
 						<NavLink
 							className="nav-link"
-							to="/about"
-							style={{
-								color: "white"
-							}}
-							activeStyle={{
-								color: "#00818A",
-								textShadow: "1px 1px 2px #00818A",
-							}}
+							to="about"
+							// style={{
+							// 	color: "white"
+							// }}
+							style={({ isActive }) => isActive ? activeStyle : normalStyle}
+						// activeStyle={{
+						// 	color: "#00818A",
+						// 	textShadow: "1px 1px 2px #00818A",
+						// }}
 						>
 							<Typography
 								variant="button"
