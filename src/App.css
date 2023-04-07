@@ -58,9 +58,11 @@ h3 {
 }
 
 .carousel-style {
-    display: flex
+    display: flex;
+    height: 500px
 }
 
+/* Used in mobile mode. */
 .column-style {
     display: flex;
     flex-direction: column;
