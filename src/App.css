@@ -28,7 +28,20 @@ h3 {
 .repo-title-link {
     color: var(--ter);
 }
+
+.nav-button-container {
+    display: flex;
+    align-items: center;
+}
+
 .nav-button-style {
+    height: 100px;
+    width: 100px;
+    fill: white;
+    cursor: pointer;
+}
+
+.nav-button-style-mobile {
     height: 40px;
     width: 40px;
     fill: white;
@@ -42,6 +55,10 @@ h3 {
 
 .project-info-style {
     display: flex;
+}
+
+.carousel-style {
+    display: flex
 }
 
 .column-style {
@@ -86,19 +103,6 @@ h3 {
     /* color: var(--ter) */
     text-decoration: underline;
 }
-
-/* a:link {
-    color: yellow
-}
-a:visited {
-    color: pink
-}
-a:hover {
-    color: red;
-}
-a:active {
-    color: purple
-} */
 
 ::selection {
     background: #94b0b3;
