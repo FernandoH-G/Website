@@ -24,8 +24,8 @@ const Videos = (props) => {
   useEffect(() => {
     async function getVideos() {
       // DONT LEAVE THESE HERE. PUT IT IN AN ENVIRONMENT VARIABLE!
-      const apiToken = `AIzaSyDDVFbBRFCRd_rPaWLh0NaDfkL5m8Q_wEQ`
-      const playlistId = `UUH37PXIgfeOlcATGX0IvEbA`
+      const apiToken = ``
+      const playlistId = ``
       const playlistItemsUrl = `playlistItems?part=snippet%2CcontentDetails&playlistId=${playlistId}&key=${apiToken}`
       const url = `https://youtube.googleapis.com/youtube/v3/${playlistItemsUrl}`
       const resp = await fetch(url)
