@@ -1,12 +1,21 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+
+import Loading from "../Component/Loading"
 
 // External Imports
-import { Container, Typography } from "@mui/material"
+import Container from "react-bootstrap/Container"
+// import YouTube from 'react-youtube';
 
 const Videos = (props) => {
   const { setHeaderMessage } = props
+
+  const [videoIds, setVideoIds] = useState(null)
   const title = "Videos"
   const message = "Recent uploads."
+
+  function onReady() {
+
+  }
 
   useEffect(() => {
     setHeaderMessage({ title: title, subtitle: message })
@@ -30,12 +39,11 @@ const Videos = (props) => {
         const videoId = video.snippet.resourceId.videoId
         videoIds.push(videoId)
       }
-      console.log(videoIds)
-
+      return videoIds
     }
     getVideos()
       .then(result => {
-        console.log(result)
+        setVideoIds(result)
       })
       .catch((err) => {
         console.error(err)
@@ -44,12 +52,26 @@ const Videos = (props) => {
   }, [])
   return (
     <Container>
-      <Typography variant="h3" gutterBottom>
-        Bio
-      </Typography>
-      <Typography paragraph>
-        Test
-      </Typography>
+      <div 
+      style={{display:"flex", flexWrap:"wrap"}}
+      >
+      {
+        // videoIds
+        //   ?
+        //   videoIds.map((videoId) => {
+        //     return (
+        //       <YouTube
+        //         key={videoId}
+        //         videoId={videoId}
+        //         onReady={onReady}
+        //         opts={{width: "200px", height: "200px"}}
+        //       />
+        //     )
+        //   })
+        //   :
+        //   <Loading />
+      }
+      </div>
     </Container>
   )
 
