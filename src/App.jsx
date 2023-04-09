@@ -13,7 +13,9 @@ import { setContext } from '@apollo/client/link/context';
 import Navigation from './Component/Navigation';
 import About from "./Endpoint/About"
 import Home from "./Endpoint/Home"
+import Videos from "./Endpoint/Videos"
 // import Test from "./Endpoint/Test"
+
 
 const httpLink = createHttpLink({
 	uri: 'https://api.github.com/graphql',
@@ -53,6 +55,10 @@ function App() {
 					<Route
 						path="about"
 						element={<About setHeaderMessage={setHeaderMessage} />}
+					/>
+					<Route
+						path="videos"
+						element={<Videos setHeaderMessage={setHeaderMessage} />}
 					/>
 					{/* <Route path="/test" element={<Test>} /> */}
 				</Routes>

@@ -8,9 +8,8 @@ import Container from "react-bootstrap/Container"
 
 function About(props) {
 	const { setHeaderMessage } = props
-	// const title = "Fernando Herrera-Gomez"
 	const title = "Fernando H-G"
-	const message = "Software Developer & occassional Philosopher."
+	const message = "Software Developer."
 
 	useEffect(() => {
 		setHeaderMessage({ title: title, subtitle: message })

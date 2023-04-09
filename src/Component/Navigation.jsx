@@ -53,14 +53,9 @@ function Navigation(props) {
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="mr-auto" >
 						<NavLink
-							// exact
 							className="nav-link"
 							to="/"
 							style={({ isActive }) => isActive ? activeStyle : normalStyle}
-						// activeStyle={{
-						// 	color: "#00818A",
-						// 	textShadow: "1px 1px 2px #00818A",
-						// }}
 						>
 							<Typography
 								variant="button"
@@ -71,19 +66,23 @@ function Navigation(props) {
 						<NavLink
 							className="nav-link"
 							to="about"
-							// style={{
-							// 	color: "white"
-							// }}
 							style={({ isActive }) => isActive ? activeStyle : normalStyle}
-						// activeStyle={{
-						// 	color: "#00818A",
-						// 	textShadow: "1px 1px 2px #00818A",
-						// }}
 						>
 							<Typography
 								variant="button"
 							>
 								About
+							</Typography>
+						</NavLink>
+						<NavLink
+							className="nav-link"
+							to="videos"
+							style={({ isActive }) => isActive ? activeStyle : normalStyle}
+						>
+							<Typography
+								variant="button"
+							>
+								Videos
 							</Typography>
 						</NavLink>
 					</Nav>
