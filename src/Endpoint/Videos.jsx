@@ -41,13 +41,13 @@ const Videos = (props) => {
       }
       return videoIds
     }
-    getVideos()
-      .then(result => {
-        setVideoIds(result)
-      })
-      .catch((err) => {
-        console.error(err)
-      })
+    // getVideos()
+    //   .then(result => {
+    //     setVideoIds(result)
+    //   })
+    //   .catch((err) => {
+    //     console.error(err)
+    //   })
 
   }, [])
   return (
