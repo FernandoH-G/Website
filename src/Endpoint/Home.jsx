@@ -16,6 +16,8 @@ import Typography from '@mui/material/Typography';
 import { useQuery } from '@apollo/client'
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 
 function Home(props) {
 	const { setHeaderMessage } = props
@@ -81,8 +83,13 @@ function Home(props) {
 						?
 						<section className="carousel-style">
 							<div className="nav-button-container">
-								<BackIcon
+								<NavigateBeforeIcon
+									fontSize="large"
 									className="nav-button-style"
+									style={{
+										width: "100px",
+										height: "200px"
+									}}
 									onClick={backwardRepo}
 								/>
 							</div>
@@ -97,10 +104,15 @@ function Home(props) {
 								<Commits currentRepo={currentRepo} />
 							</section>
 							<div className="nav-button-container">
-							<ForwardIcon
-								className="nav-button-style"
-								onClick={forwardRepo}
-							/>
+								<NavigateNextIcon
+									fontSize="large"
+									style={{
+										width: "100px",
+										height: "200px"
+									}}
+									className="nav-button-style"
+									onClick={forwardRepo}
+								/>
 							</div>
 						</section>
 						:

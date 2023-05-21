@@ -35,9 +35,7 @@ h3 {
 }
 
 .nav-button-style {
-    height: 100px;
-    width: 100px;
-    fill: white;
+    color: white;
     cursor: pointer;
 }
 
