@@ -6,7 +6,7 @@ import ic_my_pig from "./../Images/ic_my_pig_512x512.png"
 // External Imports
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import Container from 'react-bootstrap/Container'
+// import Container from 'react-bootstrap/Container'
 import Typography from '@mui/material/Typography';
 import { Link, NavLink } from "react-router-dom";
 
@@ -20,19 +20,19 @@ function Navigation(props) {
 	}
 
 	return (
-		<Container >
 			<Navbar
 				bg="dark"
 				style={{
 					display: "flex",
 					flexWrap: "wrap",
-					margin: "15px 0 15px 0",
-					padding: ".5rem 1.5rem",
-					borderRadius: "0 35px 0 35px",
+					// margin: "15px 0 15px 0",
+					marginBottom: "15px",
+					// padding: ".5rem 1.5rem",
+					// borderRadius: "0 35px 0 35px",
 					// If set height, the contents will spill over since it can't 
 					// 'grow' to fill content. minHeight sets a floor,
 					// not a ceiling. Element can grow to fit content.
-					minHeight: "200px",
+					// minHeight: "200px",
 					boxShadow: "4px 5px 9px"
 				}}
 			// Why is using this css not working?
@@ -106,7 +106,6 @@ function Navigation(props) {
 					</Typography>
 				</div>
 			</Navbar>
-		</Container>
 	);
 }
 
